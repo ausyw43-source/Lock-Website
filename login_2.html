@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In — Total Lock Solutions</title>
+<style>
+  :root {
+    --ink: #1C2024;
+    --steel-light: #4C5560;
+    --paper: #FFFFFF;
+    --paper-dim: #EEF1F4;
+    --brass: #1D5AA8;
+    --brass-bright: #2E76CC;
+    --line: rgba(16,20,24,0.14);
+    --font-display: 'Bebas Neue', 'Arial Narrow', sans-serif;
+    --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--font-body); line-height: 1.5; min-height: 100vh; display: flex; flex-direction: column; }
+  a { color: inherit; text-decoration: none; }
+
+  header.main {
+    background: var(--ink); color: #FFFFFF; padding: 18px 24px 16px; border-bottom: 3px solid var(--brass);
+  }
+  .header-inner { max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .nameplate { display: inline-flex; align-items: center; gap: 12px; border: 2px solid var(--brass); padding: 9px 22px; }
+  .brand-icon { width: 26px; height: 26px; flex-shrink: 0; color: var(--brass-bright); }
+  .brand-mark { font-family: var(--font-display); font-weight: 700; font-size: 1.9rem; letter-spacing: 0.03em; text-transform: uppercase; white-space: nowrap; }
+  .brand-mark .accent { color: var(--brass-bright); }
+  nav.main-nav {
+    display: flex; justify-content: center; gap: 22px; width: 100%;
+    font-family: var(--font-display); font-weight: 600; font-size: 0.88rem;
+    letter-spacing: 0.03em; text-transform: uppercase; flex-wrap: wrap;
+  }
+  nav.main-nav a { opacity: 0.96; border-bottom: 2px solid transparent; padding-bottom: 2px; transition: all 0.15s; }
+  nav.main-nav a:hover, nav.main-nav a.current { opacity: 1; border-bottom-color: var(--brass-bright); }
+  .cart-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 18px; height: 18px; padding: 0 5px; background: var(--brass-bright); color: #FFFFFF;
+    border-radius: 9px; font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600; margin-left: 2px;
+  }
+
+  main.wrap { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 24px; }
+
+  .auth-box { width: 100%; max-width: 400px; }
+
+  .tabs { display: flex; border: 2px solid var(--ink); margin-bottom: 24px; }
+  .tabs button {
+    flex: 1; background: var(--paper); border: none; padding: 12px;
+    font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; letter-spacing: 0.03em;
+    text-transform: uppercase; cursor: pointer; color: var(--steel-light); transition: all 0.15s;
+  }
+  .tabs button.active { background: var(--ink); color: #FFFFFF; }
+  .tabs button:not(.active):hover { background: var(--paper-dim); }
+  .tabs button:first-child { border-right: 2px solid var(--ink); }
+
+  .auth-panel { display: none; }
+  .auth-panel.active { display: block; }
+
+  h1 {
+    font-family: var(--font-display); font-weight: 600; font-size: 1.8rem; text-transform: uppercase;
+    letter-spacing: 0.02em; margin-bottom: 6px;
+  }
+  .auth-sub { font-family: var(--font-mono); font-size: 0.78rem; color: var(--steel-light); margin-bottom: 22px; }
+
+  .field { margin-bottom: 16px; }
+  label { display: block; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--steel-light); margin-bottom: 5px; }
+  input {
+    width: 100%; border: 1px solid var(--line); background: var(--paper); padding: 11px 12px;
+    font-family: var(--font-body); font-size: 0.9rem; color: var(--ink); outline: none;
+  }
+  input:focus { border-color: var(--brass); }
+
+  .btn {
+    display: block; width: 100%; text-align: center; margin-top: 8px;
+    background: var(--brass); color: #FFFFFF; border: none; padding: 13px;
+    font-family: var(--font-display); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+    font-size: 0.88rem; cursor: pointer; transition: background 0.15s;
+  }
+  .btn:hover { background: var(--brass-bright); }
+
+  .form-note {
+    margin-top: 14px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--steel-light); text-align: center;
+    display: none;
+  }
+  .form-note.show { display: block; }
+
+  .forgot-link {
+    display: block; text-align: center; margin-top: 14px; font-family: var(--font-mono);
+    font-size: 0.75rem; color: var(--steel-light); text-decoration: underline; cursor: pointer;
+  }
+
+  footer.site-footer {
+    border-top: 1px solid var(--line); padding: 20px 24px; text-align: center;
+    font-family: var(--font-mono); font-size: 0.68rem; color: var(--steel-light);
+  }
+  @media (max-width: 780px) {
+    nav.main-nav { font-size: 0.78rem; gap: 14px; }
+  }
+  @media (max-width: 480px) {
+    .nameplate { padding: 7px 14px; gap: 8px; max-width: 92vw; }
+    .brand-icon { width: 20px; height: 20px; }
+    .brand-mark { font-size: 1.3rem; letter-spacing: 0.01em; white-space: normal; text-align: center; line-height: 1.25; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="main">
+    <div class="header-inner">
+      <div class="brand-block" style="display:flex;align-items:center;justify-content:center;width:100%;">
+        <div class="nameplate">
+          <svg class="brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="11" width="16" height="10" rx="1.5" stroke="currentColor" stroke-width="2"/>
+            <path d="M7.5 11V7.5a4.5 4.5 0 0 1 9 0V11" stroke="currentColor" stroke-width="2" fill="none"/>
+            <circle cx="12" cy="16" r="1.6" fill="currentColor"/>
+          </svg>
+          <a href="index.html"><div class="brand-mark">TOTAL <span class="accent">LOCK</span> SOLUTIONS</div></a>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#levers">Levers &amp; Locksets</a>
+        <a href="index.html#closers">Door Closers</a>
+        <a href="index.html#maglocks">Magnetic Locks</a>
+        <a href="index.html#panic">Exit Devices</a>
+        <a href="cart.html">Cart <span class="cart-badge" id="cartBadge">0</span></a>
+        <a href="login.html" class="current">Sign In</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="auth-box">
+      <div class="tabs">
+        <button class="active" id="tabSignIn" onclick="showPanel('signin')">Sign In</button>
+        <button id="tabCreate" onclick="showPanel('create')">Create Account</button>
+      </div>
+
+      <div class="auth-panel active" id="panelSignIn">
+        <h1>Welcome Back</h1>
+        <div class="auth-sub">Sign in to view your orders and account.</div>
+        <form onsubmit="handleSubmit(event, 'signin')">
+          <div class="field"><label>Email Address</label><input type="email" required></div>
+          <div class="field"><label>Password</label><input type="password" required></div>
+          <button class="btn" type="submit">Sign In</button>
+        </form>
+        <a class="forgot-link">Forgot your password?</a>
+        <div class="form-note" id="noteSignIn">Account sign-in isn't connected yet — this form needs a backend to authenticate real accounts.</div>
+      </div>
+
+      <div class="auth-panel" id="panelCreate">
+        <h1>Create an Account</h1>
+        <div class="auth-sub">Set up an account to track orders and reorder faster.</div>
+        <form onsubmit="handleSubmit(event, 'create')">
+          <div class="field"><label>Full Name</label><input type="text" required></div>
+          <div class="field"><label>Email Address</label><input type="email" required></div>
+          <div class="field"><label>Password</label><input type="password" required></div>
+          <button class="btn" type="submit">Create Account</button>
+        </form>
+        <div class="form-note" id="noteCreate">Account creation isn't connected yet — this form needs a backend to store real accounts.</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">© 2026 TOTAL LOCK SOLUTIONS — LICENSED LOCKSMITH-OWNED · COMMERCIAL DOOR HARDWARE</footer>
+
+<script>
+  const CART_KEY = 'tls_cart';
+
+  function updateCartBadge() {
+    try {
+      const cart = JSON.parse(localStorage.getItem(CART_KEY)) || {};
+      const count = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
+      const badge = document.getElementById('cartBadge');
+      if (badge) badge.textContent = count;
+    } catch (e) {
+      const badge = document.getElementById('cartBadge');
+      if (badge) badge.textContent = 0;
+    }
+  }
+  updateCartBadge();
+
+  function showPanel(which) {
+    document.getElementById('tabSignIn').classList.toggle('active', which === 'signin');
+    document.getElementById('tabCreate').classList.toggle('active', which === 'create');
+    document.getElementById('panelSignIn').classList.toggle('active', which === 'signin');
+    document.getElementById('panelCreate').classList.toggle('active', which === 'create');
+  }
+
+  function handleSubmit(event, which) {
+    event.preventDefault();
+    const noteId = which === 'signin' ? 'noteSignIn' : 'noteCreate';
+    document.getElementById(noteId).classList.add('show');
+  }
+</script>
+
+</body>
+</html>
