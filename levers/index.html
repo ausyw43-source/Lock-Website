@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commercial Levers & Locksets — Ironclad Access Supply</title>
+<style>
+  :root {
+    --ink: #1C2024;
+    --steel: #14181D;
+    --steel-light: #3A4148;
+    --paper: #FFFFFF;
+    --paper-dim: #EEF1F4;
+    --brass: #1D5AA8;
+    --brass-bright: #2E76CC;
+    --blue: #0F3A66;
+    --off-white: #FFFFFF;
+    --line: rgba(16,20,24,0.14);
+    --line-light: rgba(255,255,255,0.16);
+    --font-display: 'Bebas Neue', 'Arial Narrow', sans-serif;
+    --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { overflow-x: hidden; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ===== HEADER ===== */
+  header.main {
+    background: var(--ink);
+    color: var(--off-white);
+    padding: 18px 24px 16px;
+    border-bottom: 3px solid var(--brass);
+  }
+  .header-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .brand-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .nameplate {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: none;
+    padding: 12px 16px;
+  }
+  nav.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  nav.main-nav a { opacity: 0.96; border-bottom: 2px solid transparent; padding-bottom: 2px; transition: all 0.15s; }
+  nav.main-nav a:hover { opacity: 1; border-bottom-color: var(--brass-bright); }
+  .cart-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 26px;
+    height: 26px;
+    padding: 0 7px;
+    background: var(--brass-bright);
+    color: #FFFFFF;
+    border-radius: 13px;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-left: 2px;
+  }
+  .added-notice {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--ink);
+    color: #FFFFFF;
+    font-family: var(--font-mono); font-weight: 600;
+    font-size: 1rem;
+    padding: 12px 22px;
+    border: 2px solid var(--brass-bright);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    z-index: 100;
+    white-space: nowrap;
+  }
+  .added-notice.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ===== HERO / LOOKUP CONSOLE ===== */
+  .hero {
+    background: var(--paper);
+    color: var(--ink);
+    padding: 20px 24px 22px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 27px, var(--line) 27px, var(--line) 28px);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .lookup-console {
+    background: var(--paper);
+    border: 2px solid var(--brass);
+    padding: 6px;
+  }
+  .search-row {
+    display: flex;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    margin: 4px 4px 4px;
+  }
+  .search-row input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 14px 16px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: var(--ink);
+    outline: none;
+  }
+  .search-row input::placeholder { color: var(--steel-light); }
+  .search-row button {
+    background: var(--brass);
+    color: #FFFFFF;
+    border: none;
+    padding: 0 28px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .search-row button:hover { background: var(--brass-bright); }
+  .quick-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 10px 10px;
+  }
+  .quick-filters button {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .quick-filters button:hover, .quick-filters button.active {
+    background: var(--brass);
+    border-color: var(--brass);
+    color: #FFFFFF;
+  }
+
+  /* ===== CATEGORY SPLASH GRID ===== */
+  .catalog {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 18px 24px 30px;
+  }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--brass);
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .section-head h2 {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .section-head .count {
+    font-family: var(--font-mono); font-weight: 600;
+    font-size: 1rem;
+    color: var(--steel-light);
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    display: flex;
+    gap: 22px;
+    align-items: flex-start;
+    padding: 26px 4px;
+    border-bottom: 1px solid var(--line);
+    transition: background 0.15s;
+  }
+  .card:first-child { padding-top: 4px; }
+  .card:last-child { border-bottom: none; }
+  .card:hover { background: var(--paper-dim); }
+  .card-tag {
+    font-family: var(--font-mono); font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--off-white);
+    background: var(--blue);
+    padding: 4px 10px;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  .card-icon {
+    width: 88px;
+    height: 88px;
+    flex-shrink: 0;
+    background: var(--paper-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-icon svg { width: 44px; height: 44px; }
+  .card-body { flex: 1; min-width: 0; }
+  .card-body h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin-bottom: 10px;
+  }
+  .spec-list {
+    list-style: none;
+    margin-bottom: 14px;
+  }
+  .spec-list li {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: var(--ink);
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 5px;
+  }
+  .spec-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--brass);
+  }
+  .brands-carried {
+    font-family: var(--font-mono); font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--brass);
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+  }
+  .price-sample-sku {
+    font-family: var(--font-body); font-weight: 500;
+    font-size: 1rem;
+    color: var(--steel-light);
+    margin-bottom: 16px;
+  }
+  .card-bottom {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .price-block {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .price-our {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: var(--ink);
+  }
+  .card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--brass);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .card-cta:hover { background: var(--brass-bright); }
+  .card-cta .arrow { font-size: 1.1rem; line-height: 1; }
+
+  /* ===== WHOLESALE STRIP ===== */
+  .wholesale-strip {
+    background: var(--paper);
+    color: var(--ink);
+    margin-top: 50px;
+    padding: 38px 24px;
+    border-top: 2px solid var(--brass);
+    border-bottom: 1px solid var(--line);
+  }
+  .wholesale-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .wholesale-inner h3 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+  }
+  .wholesale-inner p { color: var(--steel-light); font-size: 1rem; max-width: 52ch; }
+  .wholesale-cta {
+    background: var(--brass);
+    color: #FFFFFF;
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 13px 26px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s;
+  }
+  .wholesale-cta:hover { background: var(--brass-bright); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--paper-dim);
+    padding: 30px 24px 24px;
+    border-top: 1px solid var(--line);
+  }
+  .footer-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 26px;
+    font-size: 1rem;
+  }
+  .footer-inner h4 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: var(--steel);
+  }
+  .footer-inner p, .footer-inner li { color: var(--steel-light); font-size: 1.05rem; }
+  .footer-inner ul { list-style: none; }
+  .footer-inner li { margin-bottom: 6px; }
+  .footer-bottom {
+    max-width: 1180px;
+    margin: 24px auto 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-mono); font-weight: 600;
+    font-size: 1rem;
+    color: var(--steel-light);
+    letter-spacing: 0.03em;
+  }
+
+  .hidden { display: none !important; }
+
+  @media (max-width: 780px) {
+    .footer-inner { grid-template-columns: 1fr; }
+    nav.main-nav { font-size: 1rem; gap: 14px; }
+  }
+  @media (max-width: 560px) {
+    .card { flex-direction: column; gap: 14px; }
+    .card-icon { width: 64px; height: 64px; }
+    .card-icon svg { width: 32px; height: 32px; }
+  }
+  @media (max-width: 620px) {
+    .nameplate { padding: 6px 10px; gap: 8px; max-width: 92vw; }
+    .site-logo { max-height: 60px; max-width: 85vw; width: auto; height: auto; }
+  }
+
+  .category-hero { padding: 22px 0 8px; border-bottom: 2px solid var(--brass); margin-bottom: 20px; }
+  .category-back {
+    font-family: var(--font-mono); font-weight: 600; font-size: 1rem; color: var(--brass);
+    display: inline-block; margin-bottom: 14px;
+  }
+  .category-hero h1 {
+    font-family: var(--font-display); font-weight: 600; font-size: 2.4rem;
+    text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 8px;
+  }
+  .category-hero p {
+    font-size: 1rem; color: var(--steel-light); max-width: 72ch; margin-bottom: 14px;
+  }
+  .category-brands {
+    font-family: var(--font-mono); font-weight: 600; font-size: 1rem; color: var(--steel-light);
+    letter-spacing: 0.03em;
+  }
+  .category-brands span { color: var(--brass); }
+  .placeholder-banner {
+    background: var(--paper-dim); border: 1px solid var(--line); padding: 10px 16px;
+    font-family: var(--font-mono); font-weight: 600; font-size: 1rem; color: var(--steel-light); margin: 18px 0 24px;
+  }
+  .card-cta.disabled {
+    background: var(--paper-dim); color: var(--steel-light); cursor: default;
+  }
+  .card-cta.disabled:hover { background: var(--paper-dim); }
+  .sku-placeholder {
+    font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: var(--steel-light);
+    margin-bottom: 16px;
+  }
+
+  .catalog-wrap-inner {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+  }
+  .brand-sidebar {
+    width: 172px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: sticky;
+    top: 20px;
+  }
+  .brand-sidebar-label {
+    font-family: var(--font-mono); font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--steel-light);
+    margin-bottom: 4px;
+  }
+  .brand-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--paper);
+    border: 2px solid var(--line);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .brand-checkbox.checked {
+    background: var(--brass);
+    border-color: var(--brass);
+    color: #FFFFFF;
+  }
+  .brand-checkbox input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--brass);
+    cursor: pointer;
+  }
+  .clear-filters-link {
+    font-family: var(--font-mono); font-weight: 600;
+    font-size: 1rem;
+    color: var(--brass);
+    margin-top: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+  }
+  .catalog-main { flex: 1; min-width: 0; }
+  @media (max-width: 780px) {
+    .catalog-wrap-inner { flex-direction: column; }
+    .brand-sidebar { width: 100%; flex-direction: row; flex-wrap: wrap; position: static; }
+    .brand-sidebar-label { width: 100%; }
+    .brand-checkbox { flex: 1; min-width: 120px; }
+  }
+
+  .sort-sidebar {
+    width: 172px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: sticky;
+    top: 20px;
+  }
+  .sort-sidebar-label {
+    font-family: var(--font-mono); font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--steel-light);
+    margin-bottom: 4px;
+  }
+  .sort-option {
+    text-align: left;
+    background: var(--paper);
+    border: 2px solid var(--line);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .sort-option:hover, .sort-option.active {
+    background: var(--brass);
+    border-color: var(--brass);
+    color: #FFFFFF;
+  }
+  @media (max-width: 780px) {
+    .sort-sidebar { width: 100%; flex-direction: row; flex-wrap: wrap; position: static; order: -1; }
+    .sort-sidebar-label { width: 100%; }
+    .sort-option { flex: 1; min-width: 120px; text-align: center; }
+  }
+
+  .site-logo {
+    max-height: 150px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+  }
+
+  .price-range-block {
+    border-top: 1px solid var(--line);
+    margin-top: 14px;
+    padding-top: 14px;
+  }
+  .price-range-inputs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .price-range-inputs input {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    padding: 8px;
+    font-family: var(--font-mono); font-weight: 600;
+    font-size: 1rem;
+    color: var(--ink);
+    outline: none;
+  }
+  .price-range-inputs input:focus { border-color: var(--brass); }
+  .price-range-inputs span { font-family: var(--font-mono); font-weight: 600; color: var(--steel-light); font-size: 1rem; }
+  .apply-price-btn {
+    width: 100%;
+    background: var(--brass);
+    color: #FFFFFF;
+    border: none;
+    padding: 9px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .apply-price-btn:hover { background: var(--brass-bright); }
+
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .pagination-pages { display: flex; gap: 6px; flex-wrap: wrap; }
+  .page-btn {
+    background: var(--paper);
+    border: 2px solid var(--line);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 14px;
+    cursor: pointer;
+    min-width: 40px;
+    transition: all 0.15s;
+  }
+  .page-btn:hover:not(:disabled) { border-color: var(--brass); color: var(--brass); }
+  .page-btn.active { background: var(--brass); border-color: var(--brass); color: #FFFFFF; }
+  .page-btn:disabled { opacity: 0.4; cursor: default; }
+  .back-to-top-link {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--brass);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .back-to-top-link:hover { color: var(--brass-bright); }
+</style>
+
+<body>
+
+  <header class="main">
+    <div class="header-inner">
+      <div class="brand-block">
+        <div class="nameplate">
+          <a href="../"><img class="site-logo" src="../assets/logo-white.png" alt="Ironclad Access Supply"></a>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="../">Home</a>
+        <a href="../levers/" class="current">Levers &amp; Locksets</a>
+        <a href="../closers/">Door Closers</a>
+        <a href="../maglocks/">Magnetic Locks</a>
+        <a href="../panic/">Exit Devices</a>
+        <a href="../#brands">Brands</a>
+        <a href="../contact/">Contact Us</a>
+        <a href="../cart/">Cart <span class="cart-badge" id="cartBadge">0</span></a>
+        <a href="../login/">Sign In</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="lookup-console">
+        <div class="search-row">
+          <input id="searchInput" type="text" placeholder="Search by SKU, brand, or hardware type...">
+          <button onclick="goToSiteSearch()">Search</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="catalog">
+    <a class="category-back" href="../">&larr; Back to All Categories</a>
+    <div class="category-hero">
+      <h1>Commercial Levers &amp; Locksets</h1>
+      <p>Grade 1 and Grade 2 cylindrical and mortise levers for every commercial door function — storeroom, entry, passage, classroom, and more.</p>
+      <div class="category-brands">Brands: <span>Arrow</span> &middot; <span>Marks USA</span> &middot; <span>Dexter</span> &middot; <span>GMS</span></div>
+    </div>
+
+    <div class="placeholder-banner">These are mockup placeholder listings — real SKUs, images, specs, and pricing will replace these once suppliers are finalized.</div>
+
+    <div class="catalog-wrap-inner">
+    <aside class="brand-sidebar">
+      <div class="brand-sidebar-label">Filter by Brand</div>
+      <label class="brand-checkbox"><input type="checkbox" value="arrow" onchange="applyAllFilters()"> Arrow</label>
+      <label class="brand-checkbox"><input type="checkbox" value="marks" onchange="applyAllFilters()"> Marks USA</label>
+      <label class="brand-checkbox"><input type="checkbox" value="dexter" onchange="applyAllFilters()"> Dexter</label>
+      <label class="brand-checkbox"><input type="checkbox" value="gms" onchange="applyAllFilters()"> GMS</label>
+      <div class="brand-sidebar-label" style="margin-top:14px; padding-top:14px; border-top:1px solid var(--line);">Filter by Grade</div>
+      <label class="brand-checkbox"><input type="checkbox" class="secondary-filter" value="grade1" onchange="applyAllFilters()"> Grade 1</label>
+      <label class="brand-checkbox"><input type="checkbox" class="secondary-filter" value="grade2" onchange="applyAllFilters()"> Grade 2</label>
+      <button class="clear-filters-link" onclick="clearCategoryFilters()">Clear filters</button>
+    </aside>
+    <div class="catalog-main">
+    <div class="section-head">
+      <h2>Commercial Levers &amp; Locksets</h2>
+      <span class="count">20 placeholder items</span>
+    </div>
+
+    <div class="grid">
+      <div class="card" id="arrow-grade-1-storeroom-lever" data-price="220.0" data-name="arrow grade 1 storeroom lever" data-brand="arrow">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Arrow Grade 1 Storeroom Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 1 rated</li>
+            <li>Storeroom function</li>
+          </ul>
+          <div class="brands-carried">Arrow</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$220.00</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="marks-usa-grade-2-storeroom-lever" data-price="257.13" data-name="marks usa grade 2 storeroom lever" data-brand="marks">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Marks USA Grade 2 Storeroom Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 2 rated</li>
+            <li>Storeroom function</li>
+          </ul>
+          <div class="brands-carried">Marks USA</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$257.13</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="dexter-grade-1-entry-lever" data-price="294.26" data-name="dexter grade 1 entry lever" data-brand="dexter">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Dexter Grade 1 Entry Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 1 rated</li>
+            <li>Entry function</li>
+          </ul>
+          <div class="brands-carried">Dexter</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$294.26</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="gms-grade-2-entry-lever" data-price="231.39" data-name="gms grade 2 entry lever" data-brand="gms">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>GMS Grade 2 Entry Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 2 rated</li>
+            <li>Entry function</li>
+          </ul>
+          <div class="brands-carried">GMS</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$231.39</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="arrow-grade-1-passage-lever" data-price="268.52" data-name="arrow grade 1 passage lever" data-brand="arrow">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Arrow Grade 1 Passage Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 1 rated</li>
+            <li>Passage function</li>
+          </ul>
+          <div class="brands-carried">Arrow</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$268.52</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="marks-usa-grade-2-passage-lever" data-price="305.65" data-name="marks usa grade 2 passage lever" data-brand="marks">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Marks USA Grade 2 Passage Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 2 rated</li>
+            <li>Passage function</li>
+          </ul>
+          <div class="brands-carried">Marks USA</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$305.65</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="dexter-grade-1-classroom-lever" data-price="242.78" data-name="dexter grade 1 classroom lever" data-brand="dexter">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Dexter Grade 1 Classroom Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 1 rated</li>
+            <li>Classroom function</li>
+          </ul>
+          <div class="brands-carried">Dexter</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$242.78</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="gms-grade-2-classroom-lever" data-price="279.91" data-name="gms grade 2 classroom lever" data-brand="gms">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>GMS Grade 2 Classroom Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 2 rated</li>
+            <li>Classroom function</li>
+          </ul>
+          <div class="brands-carried">GMS</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$279.91</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="arrow-grade-1-privacy-lever" data-price="316.04" data-name="arrow grade 1 privacy lever" data-brand="arrow">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Arrow Grade 1 Privacy Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 1 rated</li>
+            <li>Privacy function</li>
+          </ul>
+          <div class="brands-carried">Arrow</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$316.04</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="marks-usa-grade-2-privacy-lever" data-price="253.17" data-name="marks usa grade 2 privacy lever" data-brand="marks">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Marks USA Grade 2 Privacy Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 2 rated</li>
+            <li>Privacy function</li>
+          </ul>
+          <div class="brands-carried">Marks USA</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$253.17</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="dexter-grade-1-communicating-lever" data-price="290.3" data-name="dexter grade 1 communicating lever" data-brand="dexter">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Dexter Grade 1 Communicating Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 1 rated</li>
+            <li>Communicating function</li>
+          </ul>
+          <div class="brands-carried">Dexter</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$290.30</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="gms-grade-2-communicating-lever" data-price="227.43" data-name="gms grade 2 communicating lever" data-brand="gms">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>GMS Grade 2 Communicating Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 2 rated</li>
+            <li>Communicating function</li>
+          </ul>
+          <div class="brands-carried">GMS</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$227.43</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="arrow-grade-1-apartment-lever" data-price="264.56" data-name="arrow grade 1 apartment lever" data-brand="arrow">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Arrow Grade 1 Apartment Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 1 rated</li>
+            <li>Apartment function</li>
+          </ul>
+          <div class="brands-carried">Arrow</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$264.56</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="marks-usa-grade-2-apartment-lever" data-price="301.69" data-name="marks usa grade 2 apartment lever" data-brand="marks">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Marks USA Grade 2 Apartment Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 2 rated</li>
+            <li>Apartment function</li>
+          </ul>
+          <div class="brands-carried">Marks USA</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$301.69</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="dexter-grade-1-institution-lever" data-price="238.82" data-name="dexter grade 1 institution lever" data-brand="dexter">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Dexter Grade 1 Institution Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 1 rated</li>
+            <li>Institution function</li>
+          </ul>
+          <div class="brands-carried">Dexter</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$238.82</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="gms-grade-2-institution-lever" data-price="275.95" data-name="gms grade 2 institution lever" data-brand="gms">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>GMS Grade 2 Institution Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 2 rated</li>
+            <li>Institution function</li>
+          </ul>
+          <div class="brands-carried">GMS</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$275.95</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="arrow-grade-1-corridor-lever" data-price="312.08" data-name="arrow grade 1 corridor lever" data-brand="arrow">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Arrow Grade 1 Corridor Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 1 rated</li>
+            <li>Corridor function</li>
+          </ul>
+          <div class="brands-carried">Arrow</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$312.08</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="marks-usa-grade-2-corridor-lever" data-price="249.21" data-name="marks usa grade 2 corridor lever" data-brand="marks">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Marks USA Grade 2 Corridor Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 2 rated</li>
+            <li>Corridor function</li>
+          </ul>
+          <div class="brands-carried">Marks USA</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$249.21</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="dexter-grade-1-hotel-lever" data-price="286.34" data-name="dexter grade 1 hotel lever" data-brand="dexter">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Dexter Grade 1 Hotel Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 1 rated</li>
+            <li>Hotel function</li>
+          </ul>
+          <div class="brands-carried">Dexter</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$286.34</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="gms-grade-2-hotel-lever" data-price="223.47" data-name="gms grade 2 hotel lever" data-brand="gms">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
+            <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
+            <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
+            <rect x="44" y="26" width="14" height="12" rx="2" stroke="#1C2024" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>GMS Grade 2 Hotel Lever</h3>
+          <ul class="spec-list">
+            <li>Grade 2 rated</li>
+            <li>Hotel function</li>
+          </ul>
+          <div class="brands-carried">GMS</div>
+          <div class="sku-placeholder">Mockup listing — sample pricing shown, final SKU and pricing pending sourcing</div>
+          <div class="card-bottom">
+            <div class="price-block"><span class="price-our">$223.47</span></div>
+            <button class="card-cta disabled" disabled><span>Coming Soon</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pagination-controls" id="paginationControls"></div>
+    </div>
+    <aside class="sort-sidebar">
+      <div class="sort-sidebar-label">Sort By</div>
+      <button class="sort-option active" data-sort="default" onclick="sortCards('default')">Default</button>
+      <button class="sort-option" data-sort="price-asc" onclick="sortCards('price-asc')">Price: Low to High</button>
+      <button class="sort-option" data-sort="price-desc" onclick="sortCards('price-desc')">Price: High to Low</button>
+      <button class="sort-option" data-sort="name-asc" onclick="sortCards('name-asc')">Name: A to Z</button>
+      <button class="sort-option" data-sort="name-desc" onclick="sortCards('name-desc')">Name: Z to A</button>
+      <div class="price-range-block">
+        <div class="sort-sidebar-label">Price Range</div>
+        <div class="price-range-inputs">
+          <input type="number" id="priceMin" placeholder="Min" min="0">
+          <span>&ndash;</span>
+          <input type="number" id="priceMax" placeholder="Max" min="0">
+        </div>
+        <button class="apply-price-btn" onclick="applyAllFilters()">Apply</button>
+      </div>
+    </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h4>Ironclad Access Supply</h4>
+        <p>Commercial door hardware for licensed locksmiths and contractors — levers, closers, access control, and life-safety egress hardware.</p>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="../levers/">Levers &amp; Locksets</a></li>
+          <li><a href="../closers/">Door Closers</a></li>
+          <li><a href="../maglocks/">Magnetic Locks</a></li>
+          <li><a href="../panic/">Panic &amp; Exit Devices</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Brands</h4>
+        <ul>
+          <li>Arrow</li>
+          <li>Marks USA</li>
+          <li>HES</li>
+          <li>Dexter &middot; GMS &middot; LSDA</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Policies</h4>
+        <ul>
+          <li><a href="../returns-warranty/">Returns &amp; Warranty</a></li>
+          <li><a href="../contact/">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 IRONCLAD ACCESS SUPPLY — LICENSED LOCKSMITH-OWNED · COMMERCIAL DOOR HARDWARE</div>
+  </footer>
+
+<script>
+  const CART_KEY = 'tls_cart';
+  const PAGE_SIZE = 8;
+  let currentPage = 1;
+  function updateCartBadge() {
+    try {
+      const cart = JSON.parse(localStorage.getItem(CART_KEY)) || {};
+      const count = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
+      const badge = document.getElementById('cartBadge');
+      if (badge) badge.textContent = count;
+    } catch (e) {
+      const badge = document.getElementById('cartBadge');
+      if (badge) badge.textContent = 0;
+    }
+  }
+  updateCartBadge();
+  applyPagination();
+
+
+  function secondaryMatch(name, value) {
+    if (value === 'grade1') return name.includes('grade 1');
+    if (value === 'grade2') return name.includes('grade 2');
+    return true;
+  }
+
+  function applyAllFilters() {
+    const allBrandInputs = Array.from(document.querySelectorAll('.brand-sidebar input[type=checkbox]')).filter(c => !c.classList.contains('secondary-filter'));
+    const secondaryInputs = Array.from(document.querySelectorAll('.brand-sidebar input.secondary-filter'));
+
+    const checkedBrands = allBrandInputs.filter(c => c.checked).map(c => c.value);
+    const checkedSecondary = secondaryInputs.filter(c => c.checked).map(c => c.value);
+
+    allBrandInputs.forEach(c => c.closest('.brand-checkbox').classList.toggle('checked', c.checked));
+    secondaryInputs.forEach(c => c.closest('.brand-checkbox').classList.toggle('checked', c.checked));
+
+    const priceMin = parseFloat(document.getElementById('priceMin').value);
+    const priceMax = parseFloat(document.getElementById('priceMax').value);
+
+    const cards = document.querySelectorAll('.card');
+    let count = 0;
+    cards.forEach(card => {
+      const brand = card.getAttribute('data-brand');
+      const name = card.getAttribute('data-name');
+      const price = parseFloat(card.getAttribute('data-price'));
+
+      const brandOk = checkedBrands.length === 0 || checkedBrands.includes(brand);
+      const secondaryOk = checkedSecondary.length === 0 || checkedSecondary.some(v => secondaryMatch(name, v));
+      const minOk = isNaN(priceMin) || price >= priceMin;
+      const maxOk = isNaN(priceMax) || price <= priceMax;
+
+      const visible = brandOk && secondaryOk && minOk && maxOk;
+      card.style.display = visible ? '' : 'none';
+      if (visible) count++;
+    });
+
+    currentPage = 1;
+    applyPagination();
+  }
+
+
+  function applyPagination() {
+    const grid = document.querySelector('.grid');
+    const allCards = Array.from(grid.querySelectorAll('.card'));
+    const passingFilter = allCards.filter(c => c.style.display !== 'none');
+
+    const totalItems = passingFilter.length;
+    const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
+    if (currentPage > totalPages) currentPage = totalPages;
+    if (currentPage < 1) currentPage = 1;
+
+    const start = (currentPage - 1) * PAGE_SIZE;
+    const end = start + PAGE_SIZE;
+
+    passingFilter.forEach((card, i) => {
+      card.style.display = (i >= start && i < end) ? '' : 'none';
+    });
+
+    const countEl = document.querySelector('.section-head .count');
+    if (countEl) countEl.textContent = totalItems + ' item' + (totalItems === 1 ? '' : 's') + ' total';
+
+    renderPaginationControls(totalPages, totalItems);
+  }
+
+  function goToPage(p) {
+    currentPage = p;
+    applyPagination();
+    document.querySelector('.grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function backToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function renderPaginationControls(totalPages, totalItems) {
+    const container = document.getElementById('paginationControls');
+    if (!container) return;
+
+    if (totalItems === 0) {
+      container.innerHTML = '';
+      return;
+    }
+
+    let pageButtons = '';
+    for (let p = 1; p <= totalPages; p++) {
+      pageButtons += '<button class="page-btn' + (p === currentPage ? ' active' : '') + '" onclick="goToPage(' + p + ')" ' + (p === currentPage ? 'aria-current="page"' : '') + '>' + p + '</button>';
+    }
+
+    container.innerHTML =
+      '<div class="pagination-pages">' +
+        '<button class="page-btn" onclick="goToPage(' + (currentPage - 1) + ')" ' + (currentPage === 1 ? 'disabled' : '') + '>&larr; Prev</button>' +
+        pageButtons +
+        '<button class="page-btn" onclick="goToPage(' + (currentPage + 1) + ')" ' + (currentPage === totalPages ? 'disabled' : '') + '>Next &rarr;</button>' +
+      '</div>' +
+      '<button class="back-to-top-link" onclick="backToTop()">&uarr; Back to Top</button>';
+  }
+
+  function clearCategoryFilters() {
+    document.querySelectorAll('.brand-sidebar input[type=checkbox]').forEach(c => c.checked = false);
+    document.getElementById('priceMin').value = '';
+    document.getElementById('priceMax').value = '';
+    applyAllFilters();
+  }
+
+
+  function goToSiteSearch() {
+    const term = document.getElementById('searchInput').value.trim();
+    window.location.href = '../?q=' + encodeURIComponent(term);
+  }
+  document.getElementById('searchInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') goToSiteSearch();
+  });
+
+  let originalCardOrder = null;
+
+  function sortCards(mode) {
+    document.querySelectorAll('.sort-option').forEach(b => {
+      b.classList.toggle('active', b.getAttribute('data-sort') === mode);
+    });
+
+    const grid = document.querySelector('.grid');
+    const cards = Array.from(grid.querySelectorAll('.card'));
+
+    if (originalCardOrder === null) {
+      originalCardOrder = cards.slice();
+    }
+
+    let sorted;
+    if (mode === 'default') {
+      sorted = originalCardOrder.slice();
+    } else if (mode === 'price-asc') {
+      sorted = cards.slice().sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
+    } else if (mode === 'price-desc') {
+      sorted = cards.slice().sort((a, b) => parseFloat(b.dataset.price) - parseFloat(a.dataset.price));
+    } else if (mode === 'name-asc') {
+      sorted = cards.slice().sort((a, b) => a.dataset.name.localeCompare(b.dataset.name));
+    } else if (mode === 'name-desc') {
+      sorted = cards.slice().sort((a, b) => b.dataset.name.localeCompare(a.dataset.name));
+    }
+
+    sorted.forEach(card => grid.appendChild(card));
+    currentPage = 1;
+    applyPagination();
+  }
+</script>
+</body>
+</html>
