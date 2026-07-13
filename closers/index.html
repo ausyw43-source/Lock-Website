@@ -1287,7 +1287,6 @@
     const priceMax = parseFloat(document.getElementById('priceMax').value);
 
     const cards = document.querySelectorAll('.card');
-    let count = 0;
     cards.forEach(card => {
       const brand = card.getAttribute('data-brand');
       const name = card.getAttribute('data-name');
@@ -1299,8 +1298,7 @@
       const maxOk = isNaN(priceMax) || price <= priceMax;
 
       const visible = brandOk && secondaryOk && minOk && maxOk;
-      card.style.display = visible ? '' : 'none';
-      if (visible) count++;
+      card.dataset.filterPass = visible ? 'true' : 'false';
     });
 
     currentPage = 1;
@@ -1311,7 +1309,7 @@
   function applyPagination() {
     const grid = document.querySelector('.grid');
     const allCards = Array.from(grid.querySelectorAll('.card'));
-    const passingFilter = allCards.filter(c => c.style.display !== 'none');
+    const passingFilter = allCards.filter(c => c.dataset.filterPass !== 'false');
 
     const totalItems = passingFilter.length;
     const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
@@ -1321,6 +1319,14 @@
     const start = (currentPage - 1) * PAGE_SIZE;
     const end = start + PAGE_SIZE;
 
+    // Cards excluded by the brand/attribute/price filter always stay hidden
+    allCards.forEach(card => {
+      if (card.dataset.filterPass === 'false') {
+        card.style.display = 'none';
+      }
+    });
+
+    // Among filter-passing cards, show only the current page's slice
     passingFilter.forEach((card, i) => {
       card.style.display = (i >= start && i < end) ? '' : 'none';
     });
@@ -1338,7 +1344,11 @@
   }
 
   function backToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    try {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    } catch (e) {
+      window.scrollTo(0, 0);
+    }
   }
 
   function renderPaginationControls(totalPages, totalItems) {
