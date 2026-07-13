@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Returns &amp; Warranty — Ironclad Access Supply</title>
+<style>
+  :root {
+    --ink: #1C2024;
+    --steel: #14181D;
+    --steel-light: #4C5560;
+    --paper: #FFFFFF;
+    --paper-dim: #EEF1F4;
+    --brass: #1D5AA8;
+    --brass-bright: #2E76CC;
+    --blue: #0F3A66;
+    --off-white: #FFFFFF;
+    --line: rgba(16,20,24,0.14);
+    --font-display: 'Bebas Neue', 'Arial Narrow', sans-serif;
+    --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { overflow-x: hidden; } body { background: var(--paper); color: var(--ink); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+
+  header.main { background: var(--ink); color: #FFFFFF; padding: 18px 24px 16px; border-bottom: 3px solid var(--brass); }
+  .header-inner { max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .brand-block { display: flex; align-items: center; justify-content: center; width: 100%; }
+  .nameplate { display: inline-flex; align-items: center; gap: 12px; border: 2px solid var(--brass); padding: 9px 22px; }
+  .brand-icon { width: 26px; height: 26px; flex-shrink: 0; color: var(--brass-bright); }
+  .brand-mark { font-family: var(--font-display); font-weight: 700; font-size: 1.9rem; letter-spacing: 0.03em; text-transform: uppercase; white-space: nowrap; }
+  .brand-mark .accent { color: var(--brass-bright); }
+  nav.main-nav {
+    display: flex; justify-content: center; gap: 22px; width: 100%;
+    font-family: var(--font-display); font-weight: 600; font-size: 0.88rem;
+    letter-spacing: 0.03em; text-transform: uppercase; flex-wrap: wrap;
+  }
+  nav.main-nav a { opacity: 0.96; border-bottom: 2px solid transparent; padding-bottom: 2px; text-decoration: none; }
+  nav.main-nav a:hover, nav.main-nav a.current { opacity: 1; border-bottom-color: var(--brass-bright); }
+  .cart-badge {
+    display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 18px;
+    padding: 0 5px; background: var(--brass-bright); color: #FFFFFF; border-radius: 9px;
+    font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600; margin-left: 2px;
+  }
+
+  .placeholder-banner {
+    background: var(--paper-dim);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 20px;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--steel-light);
+  }
+
+  main.wrap { max-width: 840px; margin: 0 auto; padding: 36px 24px 60px; }
+
+  h1 {
+    font-family: var(--font-display); font-weight: 600; font-size: 2.1rem; text-transform: uppercase;
+    letter-spacing: 0.02em; border-bottom: 2px solid var(--brass); padding-bottom: 12px; margin-bottom: 8px;
+  }
+  .updated-note {
+    font-family: var(--font-mono); font-size: 0.72rem; color: var(--steel-light); margin-bottom: 30px;
+  }
+
+  section.policy-block { margin-bottom: 32px; }
+  section.policy-block h2 {
+    font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; text-transform: uppercase;
+    letter-spacing: 0.02em; margin-bottom: 10px; color: var(--ink);
+  }
+  section.policy-block p { font-size: 0.98rem; color: var(--ink); margin-bottom: 10px; }
+  section.policy-block ul { margin: 0 0 10px 0; padding-left: 20px; }
+  section.policy-block li { font-size: 0.98rem; margin-bottom: 6px; }
+
+  .spec-table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; }
+  .spec-table th, .spec-table td {
+    text-align: left; padding: 10px 12px; border: 1px solid var(--line); font-size: 0.9rem;
+  }
+  .spec-table th { background: var(--paper-dim); font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--steel-light); }
+
+  .callout {
+    border-left: 3px solid var(--brass); background: var(--paper-dim); padding: 14px 18px; margin-bottom: 10px;
+  }
+  .callout p { margin-bottom: 0; font-size: 0.92rem; }
+
+  .placeholder-tag {
+    display: inline-block; font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--brass); border: 1px solid var(--brass); padding: 2px 8px; margin-bottom: 8px;
+  }
+
+  footer.site-footer {
+    border-top: 1px solid var(--line); padding: 20px 24px; text-align: center;
+    font-family: var(--font-mono); font-size: 0.68rem; color: var(--steel-light);
+  }
+
+  @media (max-width: 620px) {
+    .nameplate { padding: 7px 14px; gap: 8px; max-width: 92vw; }
+    .brand-icon { width: 20px; height: 20px; }
+    .brand-mark { font-size: 1.3rem; letter-spacing: 0.01em; white-space: normal; text-align: center; line-height: 1.25; }
+  }
+  @media (max-width: 780px) {
+    nav.main-nav { font-size: 0.78rem; gap: 14px; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="main">
+    <div class="header-inner">
+      <div class="brand-block">
+        <div class="nameplate">
+          <svg class="brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="11" width="16" height="10" rx="1.5" stroke="currentColor" stroke-width="2"/>
+            <path d="M7.5 11V7.5a4.5 4.5 0 0 1 9 0V11" stroke="currentColor" stroke-width="2" fill="none"/>
+            <circle cx="12" cy="16" r="1.6" fill="currentColor"/>
+          </svg>
+          <a href="../" style="text-decoration:none;"><div class="brand-mark">IRON<span class="accent">CLAD</span> ACCESS SUPPLY</div></a>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="../">Home</a>
+        <a href="../#levers">Levers &amp; Locksets</a>
+        <a href="../#closers">Door Closers</a>
+        <a href="../#maglocks">Magnetic Locks</a>
+        <a href="../#panic">Exit Devices</a>
+        <a href="../cart/">Cart <span class="cart-badge" id="cartBadge">0</span></a>
+        <a href="../login/">Sign In</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="placeholder-banner">This is a placeholder policy template — final terms will be confirmed once suppliers and product lines are locked in.</div>
+
+  <main class="wrap">
+    <h1>Returns &amp; Warranty Policy</h1>
+    <div class="updated-note">Template version — not yet finalized</div>
+
+    <section class="policy-block">
+      <span class="placeholder-tag">Placeholder</span>
+      <h2>Return Window</h2>
+      <p>We accept returns for exchange or refund within <strong>30 calendar days</strong> of delivery. After 30 days, we may offer store credit or an exchange at our discretion, but refunds are no longer guaranteed.</p>
+      <p>To be eligible for a return, an item must be:</p>
+      <ul>
+        <li>Unused, uninstalled, and in the same condition it was received in</li>
+        <li>In its original manufacturer packaging</li>
+        <li>Accompanied by the original receipt, invoice, or order confirmation</li>
+      </ul>
+    </section>
+
+    <section class="policy-block">
+      <span class="placeholder-tag">Placeholder</span>
+      <h2>How to Request a Return (RMA)</h2>
+      <p>All returns require a Return Merchandise Authorization (RMA) number before being shipped back. Items sent without an RMA may be refused or returned to the sender at their expense.</p>
+      <ul>
+        <li>Contact us with your order number and reason for return to request an RMA</li>
+        <li>RMA numbers are valid for 30 days from the date issued</li>
+        <li>Ship returns fully insured with tracking — we are not responsible for items lost or damaged in return transit</li>
+      </ul>
+    </section>
+
+    <section class="policy-block">
+      <span class="placeholder-tag">Placeholder — depends on final product lineup</span>
+      <h2>Items That May Not Be Returnable</h2>
+      <p>Certain categories of commercial door hardware typically carry return restrictions industry-wide. The exact list below will be finalized once our supplier agreements and product catalog are confirmed, but is likely to include:</p>
+      <table class="spec-table">
+        <thead>
+          <tr><th>Category</th><th>Typical Restriction</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Special-order or custom finishes</td><td>Non-returnable once ordered</td></tr>
+          <tr><td>Cut, keyed, or combinated locks</td><td>Non-returnable once keyed to a customer's system</td></tr>
+          <tr><td>Electronic access control hardware</td><td>Requires manufacturer or tech support approval before return</td></tr>
+          <tr><td>Installed or field-modified hardware</td><td>Non-returnable once installed</td></tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <p>This table is a starting structure based on common industry practice — it should be reviewed and adjusted once actual suppliers (Arrow, Marks USA, HES, Dexter, GMS, LSDA) and their individual return terms are confirmed.</p>
+      </div>
+    </section>
+
+    <section class="policy-block">
+      <span class="placeholder-tag">Placeholder</span>
+      <h2>Restocking Fees</h2>
+      <p>Non-defective returns may be subject to a restocking fee of up to <strong>[XX]%</strong>, deducted from the refund or credit issued. This figure is a placeholder until finalized.</p>
+    </section>
+
+    <section class="policy-block">
+      <span class="placeholder-tag">Placeholder</span>
+      <h2>Damaged or Defective Items</h2>
+      <p>If an item arrives damaged or defective, contact us within <strong>[X] business days</strong> of delivery. Photos or video of the damage/defect will help us process the claim faster. Damaged or defective items are not subject to a restocking fee.</p>
+    </section>
+
+    <section class="policy-block">
+      <span class="placeholder-tag">Placeholder — manufacturer-dependent</span>
+      <h2>Manufacturer Warranty</h2>
+      <p>Most commercial door hardware is covered by the original manufacturer's warranty against defects in materials and workmanship, rather than a warranty from us directly. Warranty length and coverage vary by brand and product line.</p>
+      <table class="spec-table">
+        <thead>
+          <tr><th>Brand</th><th>Warranty Terms</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Arrow</td><td>[To be confirmed with manufacturer]</td></tr>
+          <tr><td>Marks USA</td><td>[To be confirmed with manufacturer]</td></tr>
+          <tr><td>HES</td><td>[To be confirmed with manufacturer]</td></tr>
+          <tr><td>Dexter</td><td>[To be confirmed with manufacturer]</td></tr>
+          <tr><td>GMS</td><td>[To be confirmed with manufacturer]</td></tr>
+          <tr><td>LSDA</td><td>[To be confirmed with manufacturer]</td></tr>
+        </tbody>
+      </table>
+      <p>Typically excluded from manufacturer warranties: normal wear and tear, accessories, damage from improper installation, and damage from misuse. Exact exclusions will be filled in per brand once confirmed.</p>
+    </section>
+
+    <section class="policy-block">
+      <span class="placeholder-tag">Placeholder</span>
+      <h2>Questions About a Return or Warranty Claim</h2>
+      <p>Contact us with your order number before sending anything back — items returned without prior authorization may be refused.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">© 2026 IRONCLAD ACCESS SUPPLY — LICENSED LOCKSMITH-OWNED · COMMERCIAL DOOR HARDWARE</footer>
+
+<script>
+  const CART_KEY = 'tls_cart';
+  function updateCartBadge() {
+    try {
+      const cart = JSON.parse(localStorage.getItem(CART_KEY)) || {};
+      const count = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
+      const badge = document.getElementById('cartBadge');
+      if (badge) badge.textContent = count;
+    } catch (e) {
+      const badge = document.getElementById('cartBadge');
+      if (badge) badge.textContent = 0;
+    }
+  }
+  updateCartBadge();
+</script>
+
+</body>
+</html>
