@@ -662,6 +662,14 @@
     cursor: pointer;
   }
   .back-to-top-link:hover { color: var(--brass-bright); }
+  .no-filter-results {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background: var(--paper-dim);
+    border: 1px dashed var(--line);
+  }
+  .no-filter-results p { font-size: 1rem; color: var(--ink); margin-bottom: 14px; }
 </style>
 
 <body>
@@ -1353,7 +1361,11 @@
     if (!container) return;
 
     if (totalItems === 0) {
-      container.innerHTML = '';
+      container.innerHTML =
+        '<div class="no-filter-results">' +
+          '<p>No items match your current filters.</p>' +
+          '<button class="page-btn" onclick="clearCategoryFilters()">Clear Filters</button>' +
+        '</div>';
       return;
     }
 
