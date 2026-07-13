@@ -162,6 +162,44 @@
     height: auto;
     display: block;
   }
+
+  footer {
+    background: var(--paper-dim);
+    padding: 30px 24px 24px;
+    border-top: 1px solid var(--line);
+  }
+  .footer-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 26px;
+    font-size: 1rem;
+  }
+  .footer-inner h4 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: var(--steel);
+  }
+  .footer-inner p, .footer-inner li { color: var(--steel-light); font-size: 1.05rem; }
+  .footer-inner ul { list-style: none; }
+  .footer-inner li { margin-bottom: 6px; }
+  .footer-bottom {
+    max-width: 1180px;
+    margin: 24px auto 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-mono); font-weight: 600;
+    font-size: 1rem;
+    color: var(--steel-light);
+    letter-spacing: 0.03em;
+  }
+  @media (max-width: 780px) {
+    .footer-inner { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -199,7 +237,40 @@
     <div id="checkoutContent" style="display:contents;"></div>
   </main>
 
-  <footer class="site-footer">© 2026 IRONCLAD ACCESS SUPPLY — LICENSED LOCKSMITH-OWNED · COMMERCIAL DOOR HARDWARE &middot; <a href="../returns-warranty/" style="color:inherit;">Returns &amp; Warranty</a></footer>
+    <footer>
+    <div class="footer-inner">
+      <div>
+        <h4>Ironclad Access Supply</h4>
+        <p>Commercial door hardware for licensed locksmiths and contractors — levers, closers, access control, and life-safety egress hardware.</p>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="../levers/">Levers &amp; Locksets</a></li>
+          <li><a href="../closers/">Door Closers</a></li>
+          <li><a href="../maglocks/">Magnetic Locks</a></li>
+          <li><a href="../panic/">Panic &amp; Exit Devices</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Brands</h4>
+        <ul>
+          <li>Arrow</li>
+          <li>Marks USA</li>
+          <li>HES</li>
+          <li>Dexter &middot; GMS &middot; LSDA</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Policies</h4>
+        <ul>
+          <li><a href="../returns-warranty/">Returns &amp; Warranty</a></li>
+          <li><a href="../#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 IRONCLAD ACCESS SUPPLY — LICENSED LOCKSMITH-OWNED · COMMERCIAL DOOR HARDWARE</div>
+  </footer>
 
 <script>
   const CART_KEY = 'tls_cart';
