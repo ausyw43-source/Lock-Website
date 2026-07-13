@@ -101,7 +101,7 @@
     transform: translateX(-50%) translateY(20px);
     background: var(--ink);
     color: #FFFFFF;
-    font-family: var(--font-mono);
+    font-family: var(--font-mono); font-weight: 600;
     font-size: 1rem;
     padding: 12px 22px;
     border: 2px solid var(--brass-bright);
@@ -219,7 +219,7 @@
     line-height: 1.1;
   }
   .trust-badge-sub {
-    font-family: var(--font-mono);
+    font-family: var(--font-body); font-weight: 500;
     font-size: 1rem;
     color: var(--steel-light);
     margin-top: 2px;
@@ -252,7 +252,7 @@
     top: 20px;
   }
   .brand-sidebar-label {
-    font-family: var(--font-mono);
+    font-family: var(--font-mono); font-weight: 600;
     font-size: 1rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -362,7 +362,7 @@
     letter-spacing: 0.02em;
   }
   .section-head .count {
-    font-family: var(--font-mono);
+    font-family: var(--font-mono); font-weight: 600;
     font-size: 1rem;
     color: var(--steel-light);
   }
@@ -384,7 +384,7 @@
   .card:last-child { border-bottom: none; }
   .card:hover { background: var(--paper-dim); }
   .card-tag {
-    font-family: var(--font-mono);
+    font-family: var(--font-mono); font-weight: 600;
     font-size: 1rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -433,21 +433,21 @@
     color: var(--brass);
   }
   .brands-carried {
-    font-family: var(--font-mono);
+    font-family: var(--font-mono); font-weight: 600;
     font-size: 1rem;
     color: var(--brass);
     margin-bottom: 6px;
     letter-spacing: 0.02em;
   }
   .price-sample-sku {
-    font-family: var(--font-mono);
+    font-family: var(--font-body); font-weight: 500;
     font-size: 1rem;
     color: var(--steel-light);
     margin-bottom: 16px;
   }
   .view-all-link {
     display: inline-block;
-    font-family: var(--font-mono);
+    font-family: var(--font-mono); font-weight: 600;
     font-size: 1rem;
     color: var(--brass);
     margin-bottom: 14px;
@@ -579,7 +579,7 @@
     margin: 24px auto 0;
     padding-top: 16px;
     border-top: 1px solid var(--line);
-    font-family: var(--font-mono);
+    font-family: var(--font-mono); font-weight: 600;
     font-size: 1rem;
     color: var(--steel-light);
     letter-spacing: 0.03em;
@@ -1739,10 +1739,10 @@
   const CART_KEY = 'tls_cart';
 
   const PRODUCT_CATALOG = {
-    levers:   { name: 'Arrow GL81 Grade 1 Lever',                brand: 'Arrow', price: 267.83 },
-    closers:  { name: 'Grade 1 Adjustable Closer, Size 1-6',     brand: 'LSDA',  price: 190.11 },
+    levers:  { name: 'Arrow GL81 Grade 1 Lever',                brand: 'Arrow', price: 267.83 },
+    closers: { name: 'Grade 1 Adjustable Closer, Size 1-6',     brand: 'LSDA',  price: 190.11 },
     maglocks: { name: '600 lb Surface Mount Mag Lock',           brand: 'HES',   price: 130.69 },
-    panic:    { name: 'Arrow S1250 Fire-Rated Rim Exit Device',  brand: 'Arrow', price: 479.00 },
+    panic:   { name: 'Arrow S1250 Fire-Rated Rim Exit Device',  brand: 'Arrow', price: 479.00 },
     'arrow-grade-1-storeroom-lever': { name: 'Arrow Grade 1 Storeroom Lever', brand: 'Arrow', price: 220.0 },
     'arrow-grade-1-passage-lever': { name: 'Arrow Grade 1 Passage Lever', brand: 'Arrow', price: 268.52 },
     'arrow-grade-1-privacy-lever': { name: 'Arrow Grade 1 Privacy Lever', brand: 'Arrow', price: 316.04 },

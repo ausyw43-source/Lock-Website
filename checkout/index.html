@@ -40,7 +40,7 @@
 
   .demo-banner {
     background: var(--paper-dim); border-bottom: 1px solid var(--line); text-align: center;
-    padding: 8px 20px; font-family: var(--font-mono); font-size: 1rem; color: var(--steel-light);
+    padding: 8px 20px; font-family: var(--font-mono); font-weight: 600; font-size: 1rem; color: var(--steel-light);
   }
 
   main.wrap { max-width: 980px; margin: 0 auto; padding: 34px 24px 60px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; }
@@ -52,7 +52,7 @@
 
   .form-section { margin-bottom: 26px; }
   .form-section h2 {
-    font-family: var(--font-mono); font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase;
+    font-family: var(--font-mono); font-weight: 600; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase;
     color: var(--steel-light); margin-bottom: 12px;
   }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
@@ -92,7 +92,7 @@
 
   footer.site-footer {
     border-top: 1px solid var(--line); padding: 20px 24px; text-align: center;
-    font-family: var(--font-mono); font-size: 1rem; color: var(--steel-light);
+    font-family: var(--font-mono); font-weight: 600; font-size: 1rem; color: var(--steel-light);
   }
 
   @media (max-width: 720px) {
@@ -205,10 +205,10 @@
   const CART_KEY = 'tls_cart';
 
   const PRODUCT_CATALOG = {
-    levers:   { name: 'Arrow GL81 Grade 1 Lever',                brand: 'Arrow', price: 267.83 },
-    closers:  { name: 'Grade 1 Adjustable Closer, Size 1-6',     brand: 'LSDA',  price: 190.11 },
+    levers:  { name: 'Arrow GL81 Grade 1 Lever',                brand: 'Arrow', price: 267.83 },
+    closers: { name: 'Grade 1 Adjustable Closer, Size 1-6',     brand: 'LSDA',  price: 190.11 },
     maglocks: { name: '600 lb Surface Mount Mag Lock',           brand: 'HES',   price: 130.69 },
-    panic:    { name: 'Arrow S1250 Fire-Rated Rim Exit Device',  brand: 'Arrow', price: 479.00 },
+    panic:   { name: 'Arrow S1250 Fire-Rated Rim Exit Device',  brand: 'Arrow', price: 479.00 },
     'arrow-grade-1-storeroom-lever': { name: 'Arrow Grade 1 Storeroom Lever', brand: 'Arrow', price: 220.0 },
     'arrow-grade-1-passage-lever': { name: 'Arrow Grade 1 Passage Lever', brand: 'Arrow', price: 268.52 },
     'arrow-grade-1-privacy-lever': { name: 'Arrow Grade 1 Privacy Lever', brand: 'Arrow', price: 316.04 },
