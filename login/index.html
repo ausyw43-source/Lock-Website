@@ -106,6 +106,57 @@
     .brand-icon { width: 20px; height: 20px; }
     .brand-mark { font-size: 1.3rem; letter-spacing: 0.01em; white-space: normal; text-align: center; line-height: 1.25; }
   }
+
+  .hero {
+    background: var(--paper);
+    color: var(--ink);
+    padding: 20px 24px 22px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .lookup-console {
+    background: var(--paper);
+    border: 2px solid var(--brass);
+    padding: 6px;
+  }
+  .search-row {
+    display: flex;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    margin: 4px 4px 4px;
+  }
+  .search-row input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 14px 16px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: var(--ink);
+    outline: none;
+  }
+  .search-row input::placeholder { color: var(--steel-light); }
+  .search-row button {
+    background: var(--brass);
+    color: #FFFFFF;
+    border: none;
+    padding: 0 28px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.92rem;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .search-row button:hover { background: var(--brass-bright); }
 </style>
 </head>
 <body>
@@ -133,6 +184,18 @@
       </nav>
     </div>
   </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="lookup-console">
+        <div class="search-row">
+          <input id="searchInput" type="text" placeholder="Search by SKU, brand, or hardware type...">
+          <button onclick="goToSiteSearch()">Search</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <main class="wrap">
     <div class="auth-box">
@@ -197,6 +260,14 @@
     const noteId = which === 'signin' ? 'noteSignIn' : 'noteCreate';
     document.getElementById(noteId).classList.add('show');
   }
+
+  function goToSiteSearch() {
+    const term = document.getElementById('searchInput').value.trim();
+    window.location.href = '../?q=' + encodeURIComponent(term);
+  }
+  document.getElementById('searchInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') goToSiteSearch();
+  });
 </script>
 
 </body>

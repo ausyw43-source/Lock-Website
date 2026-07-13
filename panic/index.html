@@ -483,6 +483,74 @@
     font-family: var(--font-mono); font-size: 0.66rem; color: var(--steel-light);
     margin-bottom: 16px;
   }
+
+  .catalog-wrap-inner {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+  }
+  .brand-sidebar {
+    width: 172px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: sticky;
+    top: 20px;
+  }
+  .brand-sidebar-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--steel-light);
+    margin-bottom: 4px;
+  }
+  .brand-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--paper);
+    border: 2px solid var(--line);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .brand-checkbox.checked {
+    background: var(--brass);
+    border-color: var(--brass);
+    color: #FFFFFF;
+  }
+  .brand-checkbox input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--brass);
+    cursor: pointer;
+  }
+  .clear-filters-link {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--brass);
+    margin-top: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+  }
+  .catalog-main { flex: 1; min-width: 0; }
+  @media (max-width: 780px) {
+    .catalog-wrap-inner { flex-direction: column; }
+    .brand-sidebar { width: 100%; flex-direction: row; flex-wrap: wrap; position: static; }
+    .brand-sidebar-label { width: 100%; }
+    .brand-checkbox { flex: 1; min-width: 120px; }
+  }
 </style>
 
 <body>
@@ -512,6 +580,17 @@
     </div>
   </header>
 
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="lookup-console">
+        <div class="search-row">
+          <input id="searchInput" type="text" placeholder="Search by SKU, brand, or hardware type...">
+          <button onclick="goToSiteSearch()">Search</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <main class="catalog">
     <a class="category-back" href="../">&larr; Back to All Categories</a>
     <div class="category-hero">
@@ -522,13 +601,22 @@
 
     <div class="placeholder-banner">These are mockup placeholder listings — real SKUs, images, specs, and pricing will replace these once suppliers are finalized.</div>
 
+    <div class="catalog-wrap-inner">
+    <aside class="brand-sidebar">
+      <div class="brand-sidebar-label">Filter by Brand</div>
+      <label class="brand-checkbox"><input type="checkbox" value="arrow" onchange="filterCategoryBrands()"> Arrow</label>
+      <label class="brand-checkbox"><input type="checkbox" value="lsda" onchange="filterCategoryBrands()"> LSDA</label>
+      <label class="brand-checkbox"><input type="checkbox" value="dexter" onchange="filterCategoryBrands()"> Dexter</label>
+      <button class="clear-filters-link" onclick="clearCategoryFilters()">Clear filters</button>
+    </aside>
+    <div class="catalog-main">
     <div class="section-head">
       <h2>Panic &amp; Exit Devices</h2>
       <span class="count">20 placeholder items</span>
     </div>
 
     <div class="grid">
-      <div class="card">
+      <div class="card" id="arrow-fire-rated-rim-exit-device-less-trim" data-brand="arrow">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -551,7 +639,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="lsda-non-fire-rated-rim-exit-device-less-trim" data-brand="lsda">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -574,7 +662,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="dexter-fire-rated-rim-exit-device-with-pull-trim" data-brand="dexter">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -597,7 +685,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="arrow-non-fire-rated-rim-exit-device-with-pull-trim" data-brand="arrow">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -620,7 +708,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="lsda-fire-rated-rim-exit-device-with-lever-trim" data-brand="lsda">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -643,7 +731,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="dexter-non-fire-rated-rim-exit-device-with-lever-trim" data-brand="dexter">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -666,7 +754,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="arrow-fire-rated-mortise-exit-device-less-trim" data-brand="arrow">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -689,7 +777,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="lsda-non-fire-rated-mortise-exit-device-less-trim" data-brand="lsda">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -712,7 +800,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="dexter-fire-rated-mortise-exit-device-with-pull-trim" data-brand="dexter">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -735,7 +823,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="arrow-non-fire-rated-mortise-exit-device-with-pull-trim" data-brand="arrow">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -758,7 +846,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="lsda-fire-rated-mortise-exit-device-with-lever-trim" data-brand="lsda">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -781,7 +869,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="dexter-non-fire-rated-mortise-exit-device-with-lever-trim" data-brand="dexter">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -804,7 +892,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="arrow-fire-rated-vertical-rod-exit-device-less-trim" data-brand="arrow">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -827,7 +915,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="lsda-non-fire-rated-vertical-rod-exit-device-less-trim" data-brand="lsda">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -850,7 +938,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="dexter-fire-rated-vertical-rod-exit-device-with-pull-trim" data-brand="dexter">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -873,7 +961,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="arrow-non-fire-rated-vertical-rod-exit-device-with-pull-trim" data-brand="arrow">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -896,7 +984,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="lsda-fire-rated-vertical-rod-exit-device-with-lever-trim" data-brand="lsda">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -919,7 +1007,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="dexter-non-fire-rated-vertical-rod-exit-device-with-lever-trim" data-brand="dexter">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -942,7 +1030,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="arrow-fire-rated-concealed-vertical-rod-less-trim" data-brand="arrow">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -965,7 +1053,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="lsda-non-fire-rated-concealed-vertical-rod-less-trim" data-brand="lsda">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
@@ -988,6 +1076,8 @@
           </div>
         </div>
       </div>
+    </div>
+    </div>
     </div>
   </main>
 
@@ -1039,6 +1129,37 @@
     }
   }
   updateCartBadge();
+
+  function filterCategoryBrands() {
+    const checkboxes = document.querySelectorAll('.brand-sidebar input[type=checkbox]');
+    const checked = Array.from(checkboxes).filter(c => c.checked).map(c => c.value);
+    checkboxes.forEach(c => {
+      c.closest('.brand-checkbox').classList.toggle('checked', c.checked);
+    });
+    const cards = document.querySelectorAll('.card');
+    let count = 0;
+    cards.forEach(card => {
+      const brand = card.getAttribute('data-brand');
+      const visible = checked.length === 0 || checked.includes(brand);
+      card.style.display = visible ? '' : 'none';
+      if (visible) count++;
+    });
+    const countEl = document.querySelector('.section-head .count');
+    if (countEl) countEl.textContent = count + ' item' + (count === 1 ? '' : 's') + ' shown';
+  }
+
+  function clearCategoryFilters() {
+    document.querySelectorAll('.brand-sidebar input[type=checkbox]').forEach(c => c.checked = false);
+    filterCategoryBrands();
+  }
+
+  function goToSiteSearch() {
+    const term = document.getElementById('searchInput').value.trim();
+    window.location.href = '../?q=' + encodeURIComponent(term);
+  }
+  document.getElementById('searchInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') goToSiteSearch();
+  });
 </script>
 </body>
 </html>
