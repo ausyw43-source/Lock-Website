@@ -36,9 +36,6 @@
   .header-inner { max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 10px; }
   .brand-block { display: flex; align-items: center; justify-content: center; width: 100%; }
   .nameplate { display: inline-flex; align-items: center; gap: 12px; border: 2px solid var(--brass); padding: 9px 22px; }
-  .brand-icon { width: 26px; height: 26px; flex-shrink: 0; color: var(--brass-bright); }
-  .brand-mark { font-family: var(--font-display); font-weight: 700; font-size: 1.9rem; letter-spacing: 0.03em; text-transform: uppercase; white-space: nowrap; }
-  .brand-mark .accent { color: var(--brass-bright); }
   nav.main-nav {
     display: flex; justify-content: center; gap: 22px; width: 100%;
     font-family: var(--font-display); font-weight: 600; font-size: 0.88rem;
@@ -123,8 +120,7 @@
   }
   @media (max-width: 620px) {
     .nameplate { padding: 7px 14px; gap: 8px; max-width: 92vw; }
-    .brand-icon { width: 20px; height: 20px; }
-    .brand-mark { font-size: 1.3rem; letter-spacing: 0.01em; white-space: normal; text-align: center; line-height: 1.25; }
+    .site-logo { height: 48px; }
   }
 
   .hero {
@@ -177,6 +173,12 @@
     transition: background 0.15s;
   }
   .search-row button:hover { background: var(--brass-bright); }
+
+  .site-logo {
+    height: 68px;
+    width: auto;
+    display: block;
+  }
 </style>
 </head>
 <body>
@@ -185,12 +187,7 @@
     <div class="header-inner">
       <div class="brand-block">
         <div class="nameplate">
-          <svg class="brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="4" y="11" width="16" height="10" rx="1.5" stroke="currentColor" stroke-width="2"/>
-            <path d="M7.5 11V7.5a4.5 4.5 0 0 1 9 0V11" stroke="currentColor" stroke-width="2" fill="none"/>
-            <circle cx="12" cy="16" r="1.6" fill="currentColor"/>
-          </svg>
-          <div class="brand-mark">IRON<span class="accent">CLAD</span> ACCESS SUPPLY</div>
+          <a href="../"><img class="site-logo" src="../assets/logo-white.png" alt="Ironclad Access Supply"></a>
         </div>
       </div>
       <nav class="main-nav">
