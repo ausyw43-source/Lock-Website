@@ -483,6 +483,74 @@
     font-family: var(--font-mono); font-size: 0.66rem; color: var(--steel-light);
     margin-bottom: 16px;
   }
+
+  .catalog-wrap-inner {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+  }
+  .brand-sidebar {
+    width: 172px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: sticky;
+    top: 20px;
+  }
+  .brand-sidebar-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--steel-light);
+    margin-bottom: 4px;
+  }
+  .brand-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--paper);
+    border: 2px solid var(--line);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .brand-checkbox.checked {
+    background: var(--brass);
+    border-color: var(--brass);
+    color: #FFFFFF;
+  }
+  .brand-checkbox input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--brass);
+    cursor: pointer;
+  }
+  .clear-filters-link {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--brass);
+    margin-top: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+  }
+  .catalog-main { flex: 1; min-width: 0; }
+  @media (max-width: 780px) {
+    .catalog-wrap-inner { flex-direction: column; }
+    .brand-sidebar { width: 100%; flex-direction: row; flex-wrap: wrap; position: static; }
+    .brand-sidebar-label { width: 100%; }
+    .brand-checkbox { flex: 1; min-width: 120px; }
+  }
 </style>
 
 <body>
@@ -512,6 +580,17 @@
     </div>
   </header>
 
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="lookup-console">
+        <div class="search-row">
+          <input id="searchInput" type="text" placeholder="Search by SKU, brand, or hardware type...">
+          <button onclick="goToSiteSearch()">Search</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <main class="catalog">
     <a class="category-back" href="../">&larr; Back to All Categories</a>
     <div class="category-hero">
@@ -522,13 +601,23 @@
 
     <div class="placeholder-banner">These are mockup placeholder listings — real SKUs, images, specs, and pricing will replace these once suppliers are finalized.</div>
 
+    <div class="catalog-wrap-inner">
+    <aside class="brand-sidebar">
+      <div class="brand-sidebar-label">Filter by Brand</div>
+      <label class="brand-checkbox"><input type="checkbox" value="arrow" onchange="filterCategoryBrands()"> Arrow</label>
+      <label class="brand-checkbox"><input type="checkbox" value="marks" onchange="filterCategoryBrands()"> Marks USA</label>
+      <label class="brand-checkbox"><input type="checkbox" value="dexter" onchange="filterCategoryBrands()"> Dexter</label>
+      <label class="brand-checkbox"><input type="checkbox" value="gms" onchange="filterCategoryBrands()"> GMS</label>
+      <button class="clear-filters-link" onclick="clearCategoryFilters()">Clear filters</button>
+    </aside>
+    <div class="catalog-main">
     <div class="section-head">
       <h2>Commercial Levers &amp; Locksets</h2>
       <span class="count">20 placeholder items</span>
     </div>
 
     <div class="grid">
-      <div class="card">
+      <div class="card" id="arrow-grade-1-storeroom-lever" data-brand="arrow">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -552,7 +641,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="marks-usa-grade-2-storeroom-lever" data-brand="marks">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -576,7 +665,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="dexter-grade-1-entry-lever" data-brand="dexter">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -600,7 +689,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="gms-grade-2-entry-lever" data-brand="gms">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -624,7 +713,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="arrow-grade-1-passage-lever" data-brand="arrow">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -648,7 +737,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="marks-usa-grade-2-passage-lever" data-brand="marks">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -672,7 +761,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="dexter-grade-1-classroom-lever" data-brand="dexter">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -696,7 +785,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="gms-grade-2-classroom-lever" data-brand="gms">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -720,7 +809,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="arrow-grade-1-privacy-lever" data-brand="arrow">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -744,7 +833,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="marks-usa-grade-2-privacy-lever" data-brand="marks">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -768,7 +857,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="dexter-grade-1-communicating-lever" data-brand="dexter">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -792,7 +881,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="gms-grade-2-communicating-lever" data-brand="gms">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -816,7 +905,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="arrow-grade-1-apartment-lever" data-brand="arrow">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -840,7 +929,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="marks-usa-grade-2-apartment-lever" data-brand="marks">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -864,7 +953,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="dexter-grade-1-institution-lever" data-brand="dexter">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -888,7 +977,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="gms-grade-2-institution-lever" data-brand="gms">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -912,7 +1001,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="arrow-grade-1-corridor-lever" data-brand="arrow">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -936,7 +1025,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="marks-usa-grade-2-corridor-lever" data-brand="marks">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -960,7 +1049,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="dexter-grade-1-hotel-lever" data-brand="dexter">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -984,7 +1073,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="gms-grade-2-hotel-lever" data-brand="gms">
         <div class="card-icon">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
@@ -1008,6 +1097,8 @@
           </div>
         </div>
       </div>
+    </div>
+    </div>
     </div>
   </main>
 
@@ -1059,6 +1150,37 @@
     }
   }
   updateCartBadge();
+
+  function filterCategoryBrands() {
+    const checkboxes = document.querySelectorAll('.brand-sidebar input[type=checkbox]');
+    const checked = Array.from(checkboxes).filter(c => c.checked).map(c => c.value);
+    checkboxes.forEach(c => {
+      c.closest('.brand-checkbox').classList.toggle('checked', c.checked);
+    });
+    const cards = document.querySelectorAll('.card');
+    let count = 0;
+    cards.forEach(card => {
+      const brand = card.getAttribute('data-brand');
+      const visible = checked.length === 0 || checked.includes(brand);
+      card.style.display = visible ? '' : 'none';
+      if (visible) count++;
+    });
+    const countEl = document.querySelector('.section-head .count');
+    if (countEl) countEl.textContent = count + ' item' + (count === 1 ? '' : 's') + ' shown';
+  }
+
+  function clearCategoryFilters() {
+    document.querySelectorAll('.brand-sidebar input[type=checkbox]').forEach(c => c.checked = false);
+    filterCategoryBrands();
+  }
+
+  function goToSiteSearch() {
+    const term = document.getElementById('searchInput').value.trim();
+    window.location.href = '../?q=' + encodeURIComponent(term);
+  }
+  document.getElementById('searchInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') goToSiteSearch();
+  });
 </script>
 </body>
 </html>
