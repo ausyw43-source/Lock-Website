@@ -625,6 +625,43 @@
     transition: background 0.15s;
   }
   .apply-price-btn:hover { background: var(--brass-bright); }
+
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .pagination-pages { display: flex; gap: 6px; flex-wrap: wrap; }
+  .page-btn {
+    background: var(--paper);
+    border: 2px solid var(--line);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 14px;
+    cursor: pointer;
+    min-width: 40px;
+    transition: all 0.15s;
+  }
+  .page-btn:hover:not(:disabled) { border-color: var(--brass); color: var(--brass); }
+  .page-btn.active { background: var(--brass); border-color: var(--brass); color: #FFFFFF; }
+  .page-btn:disabled { opacity: 0.4; cursor: default; }
+  .back-to-top-link {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--brass);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .back-to-top-link:hover { color: var(--brass-bright); }
 </style>
 
 <body>
@@ -693,7 +730,7 @@
     <div class="grid">
       <div class="card" id="lsda-standard-duty-surface-mount-closer" data-price="180.0" data-name="lsda standard duty surface mount closer" data-brand="lsda">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -716,7 +753,7 @@
       </div>
       <div class="card" id="gms-heavy-duty-surface-mount-closer" data-price="217.13" data-name="gms heavy duty surface mount closer" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -739,7 +776,7 @@
       </div>
       <div class="card" id="arrow-ada-compliant-surface-mount-closer" data-price="254.26" data-name="arrow ada compliant surface mount closer" data-brand="arrow">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -762,7 +799,7 @@
       </div>
       <div class="card" id="lsda-fire-rated-surface-mount-closer" data-price="211.39" data-name="lsda fire-rated surface mount closer" data-brand="lsda">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -785,7 +822,7 @@
       </div>
       <div class="card" id="gms-standard-duty-concealed-overhead-closer" data-price="248.52" data-name="gms standard duty concealed overhead closer" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -808,7 +845,7 @@
       </div>
       <div class="card" id="arrow-heavy-duty-concealed-overhead-closer" data-price="205.65" data-name="arrow heavy duty concealed overhead closer" data-brand="arrow">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -831,7 +868,7 @@
       </div>
       <div class="card" id="lsda-ada-compliant-concealed-overhead-closer" data-price="242.78" data-name="lsda ada compliant concealed overhead closer" data-brand="lsda">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -854,7 +891,7 @@
       </div>
       <div class="card" id="gms-fire-rated-concealed-overhead-closer" data-price="199.91" data-name="gms fire-rated concealed overhead closer" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -877,7 +914,7 @@
       </div>
       <div class="card" id="arrow-standard-duty-floor-spring-closer" data-price="236.04" data-name="arrow standard duty floor spring closer" data-brand="arrow">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -900,7 +937,7 @@
       </div>
       <div class="card" id="lsda-heavy-duty-floor-spring-closer" data-price="193.17" data-name="lsda heavy duty floor spring closer" data-brand="lsda">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -923,7 +960,7 @@
       </div>
       <div class="card" id="gms-ada-compliant-floor-spring-closer" data-price="230.3" data-name="gms ada compliant floor spring closer" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -946,7 +983,7 @@
       </div>
       <div class="card" id="arrow-fire-rated-floor-spring-closer" data-price="187.43" data-name="arrow fire-rated floor spring closer" data-brand="arrow">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -969,7 +1006,7 @@
       </div>
       <div class="card" id="lsda-standard-duty-parallel-arm-closer" data-price="224.56" data-name="lsda standard duty parallel arm closer" data-brand="lsda">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -992,7 +1029,7 @@
       </div>
       <div class="card" id="gms-heavy-duty-parallel-arm-closer" data-price="181.69" data-name="gms heavy duty parallel arm closer" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -1015,7 +1052,7 @@
       </div>
       <div class="card" id="arrow-ada-compliant-parallel-arm-closer" data-price="218.82" data-name="arrow ada compliant parallel arm closer" data-brand="arrow">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -1038,7 +1075,7 @@
       </div>
       <div class="card" id="lsda-fire-rated-parallel-arm-closer" data-price="255.95" data-name="lsda fire-rated parallel arm closer" data-brand="lsda">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -1061,7 +1098,7 @@
       </div>
       <div class="card" id="gms-standard-duty-top-jamb-closer" data-price="212.08" data-name="gms standard duty top jamb closer" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -1084,7 +1121,7 @@
       </div>
       <div class="card" id="arrow-heavy-duty-top-jamb-closer" data-price="249.21" data-name="arrow heavy duty top jamb closer" data-brand="arrow">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -1107,7 +1144,7 @@
       </div>
       <div class="card" id="lsda-ada-compliant-top-jamb-closer" data-price="206.34" data-name="lsda ada compliant top jamb closer" data-brand="lsda">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -1130,7 +1167,7 @@
       </div>
       <div class="card" id="gms-fire-rated-top-jamb-closer" data-price="243.47" data-name="gms fire-rated top jamb closer" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="14" width="34" height="10" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M42 19 L54 40" stroke="#1C2024" stroke-width="2"/>
             <path d="M8 19 L20 50" stroke="#1C2024" stroke-width="2" stroke-dasharray="3 3"/>
@@ -1152,6 +1189,7 @@
         </div>
       </div>
     </div>
+    <div class="pagination-controls" id="paginationControls"></div>
     </div>
     <aside class="sort-sidebar">
       <div class="sort-sidebar-label">Sort By</div>
@@ -1210,6 +1248,8 @@
 
 <script>
   const CART_KEY = 'tls_cart';
+  const PAGE_SIZE = 8;
+  let currentPage = 1;
   function updateCartBadge() {
     try {
       const cart = JSON.parse(localStorage.getItem(CART_KEY)) || {};
@@ -1222,6 +1262,7 @@
     }
   }
   updateCartBadge();
+  applyPagination();
 
 
   function secondaryMatch(name, value) {
@@ -1262,8 +1303,65 @@
       if (visible) count++;
     });
 
+    currentPage = 1;
+    applyPagination();
+  }
+
+
+  function applyPagination() {
+    const grid = document.querySelector('.grid');
+    const allCards = Array.from(grid.querySelectorAll('.card'));
+    const passingFilter = allCards.filter(c => c.style.display !== 'none');
+
+    const totalItems = passingFilter.length;
+    const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
+    if (currentPage > totalPages) currentPage = totalPages;
+    if (currentPage < 1) currentPage = 1;
+
+    const start = (currentPage - 1) * PAGE_SIZE;
+    const end = start + PAGE_SIZE;
+
+    passingFilter.forEach((card, i) => {
+      card.style.display = (i >= start && i < end) ? '' : 'none';
+    });
+
     const countEl = document.querySelector('.section-head .count');
-    if (countEl) countEl.textContent = count + ' item' + (count === 1 ? '' : 's') + ' shown';
+    if (countEl) countEl.textContent = totalItems + ' item' + (totalItems === 1 ? '' : 's') + ' total';
+
+    renderPaginationControls(totalPages, totalItems);
+  }
+
+  function goToPage(p) {
+    currentPage = p;
+    applyPagination();
+    document.querySelector('.grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function backToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function renderPaginationControls(totalPages, totalItems) {
+    const container = document.getElementById('paginationControls');
+    if (!container) return;
+
+    if (totalItems === 0) {
+      container.innerHTML = '';
+      return;
+    }
+
+    let pageButtons = '';
+    for (let p = 1; p <= totalPages; p++) {
+      pageButtons += '<button class="page-btn' + (p === currentPage ? ' active' : '') + '" onclick="goToPage(' + p + ')" ' + (p === currentPage ? 'aria-current="page"' : '') + '>' + p + '</button>';
+    }
+
+    container.innerHTML =
+      '<div class="pagination-pages">' +
+        '<button class="page-btn" onclick="goToPage(' + (currentPage - 1) + ')" ' + (currentPage === 1 ? 'disabled' : '') + '>&larr; Prev</button>' +
+        pageButtons +
+        '<button class="page-btn" onclick="goToPage(' + (currentPage + 1) + ')" ' + (currentPage === totalPages ? 'disabled' : '') + '>Next &rarr;</button>' +
+      '</div>' +
+      '<button class="back-to-top-link" onclick="backToTop()">&uarr; Back to Top</button>';
   }
 
   function clearCategoryFilters() {
@@ -1310,6 +1408,8 @@
     }
 
     sorted.forEach(card => grid.appendChild(card));
+    currentPage = 1;
+    applyPagination();
   }
 </script>
 </body>

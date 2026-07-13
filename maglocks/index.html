@@ -625,6 +625,43 @@
     transition: background 0.15s;
   }
   .apply-price-btn:hover { background: var(--brass-bright); }
+
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .pagination-pages { display: flex; gap: 6px; flex-wrap: wrap; }
+  .page-btn {
+    background: var(--paper);
+    border: 2px solid var(--line);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 14px;
+    cursor: pointer;
+    min-width: 40px;
+    transition: all 0.15s;
+  }
+  .page-btn:hover:not(:disabled) { border-color: var(--brass); color: var(--brass); }
+  .page-btn.active { background: var(--brass); border-color: var(--brass); color: #FFFFFF; }
+  .page-btn:disabled { opacity: 0.4; cursor: default; }
+  .back-to-top-link {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--brass);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .back-to-top-link:hover { color: var(--brass-bright); }
 </style>
 
 <body>
@@ -690,7 +727,7 @@
     <div class="grid">
       <div class="card" id="hes-600-lb-single-door-surface-mount-mag-lock-with-monitoring" data-price="120.0" data-name="hes 600 lb single door surface mount mag lock with monitoring" data-brand="hes">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -713,7 +750,7 @@
       </div>
       <div class="card" id="gms-600-lb-single-door-surface-mount-mag-lock-without-monitoring" data-price="157.13" data-name="gms 600 lb single door surface mount mag lock without monitoring" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -736,7 +773,7 @@
       </div>
       <div class="card" id="hes-1200-lb-single-door-surface-mount-mag-lock-with-monitoring" data-price="124.26" data-name="hes 1200 lb single door surface mount mag lock with monitoring" data-brand="hes">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -759,7 +796,7 @@
       </div>
       <div class="card" id="gms-1200-lb-single-door-surface-mount-mag-lock-without-monitoring" data-price="161.39" data-name="gms 1200 lb single door surface mount mag lock without monitoring" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -782,7 +819,7 @@
       </div>
       <div class="card" id="hes-600-lb-double-door-surface-mount-mag-lock-with-monitoring" data-price="128.52" data-name="hes 600 lb double door surface mount mag lock with monitoring" data-brand="hes">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -805,7 +842,7 @@
       </div>
       <div class="card" id="gms-600-lb-double-door-surface-mount-mag-lock-without-monitoring" data-price="165.65" data-name="gms 600 lb double door surface mount mag lock without monitoring" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -828,7 +865,7 @@
       </div>
       <div class="card" id="hes-1200-lb-double-door-surface-mount-mag-lock-with-monitoring" data-price="132.78" data-name="hes 1200 lb double door surface mount mag lock with monitoring" data-brand="hes">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -851,7 +888,7 @@
       </div>
       <div class="card" id="gms-1200-lb-double-door-surface-mount-mag-lock-without-monitoring" data-price="169.91" data-name="gms 1200 lb double door surface mount mag lock without monitoring" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -874,7 +911,7 @@
       </div>
       <div class="card" id="hes-600-lb-gate-mount-mag-lock-with-monitoring" data-price="136.04" data-name="hes 600 lb gate mount mag lock with monitoring" data-brand="hes">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -897,7 +934,7 @@
       </div>
       <div class="card" id="gms-600-lb-gate-mount-mag-lock-without-monitoring" data-price="173.17" data-name="gms 600 lb gate mount mag lock without monitoring" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -920,7 +957,7 @@
       </div>
       <div class="card" id="hes-1200-lb-gate-mount-mag-lock-with-monitoring" data-price="140.3" data-name="hes 1200 lb gate mount mag lock with monitoring" data-brand="hes">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -943,7 +980,7 @@
       </div>
       <div class="card" id="gms-1200-lb-gate-mount-mag-lock-without-monitoring" data-price="177.43" data-name="gms 1200 lb gate mount mag lock without monitoring" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -966,7 +1003,7 @@
       </div>
       <div class="card" id="hes-600-lb-recessed-mount-mag-lock-with-monitoring" data-price="144.56" data-name="hes 600 lb recessed mount mag lock with monitoring" data-brand="hes">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -989,7 +1026,7 @@
       </div>
       <div class="card" id="gms-600-lb-recessed-mount-mag-lock-without-monitoring" data-price="181.69" data-name="gms 600 lb recessed mount mag lock without monitoring" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -1012,7 +1049,7 @@
       </div>
       <div class="card" id="hes-1200-lb-recessed-mount-mag-lock-with-monitoring" data-price="148.82" data-name="hes 1200 lb recessed mount mag lock with monitoring" data-brand="hes">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -1035,7 +1072,7 @@
       </div>
       <div class="card" id="gms-1200-lb-recessed-mount-mag-lock-without-monitoring" data-price="185.95" data-name="gms 1200 lb recessed mount mag lock without monitoring" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -1058,7 +1095,7 @@
       </div>
       <div class="card" id="hes-600-lb-mini-mag-mag-lock-with-monitoring" data-price="152.08" data-name="hes 600 lb mini mag mag lock with monitoring" data-brand="hes">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -1081,7 +1118,7 @@
       </div>
       <div class="card" id="gms-600-lb-mini-mag-mag-lock-without-monitoring" data-price="189.21" data-name="gms 600 lb mini mag mag lock without monitoring" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -1104,7 +1141,7 @@
       </div>
       <div class="card" id="hes-1200-lb-mini-mag-mag-lock-with-monitoring" data-price="156.34" data-name="hes 1200 lb mini mag mag lock with monitoring" data-brand="hes">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -1127,7 +1164,7 @@
       </div>
       <div class="card" id="gms-1200-lb-mini-mag-mag-lock-without-monitoring" data-price="123.47" data-name="gms 1200 lb mini mag mag lock without monitoring" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="10" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="34" y="20" width="20" height="14" rx="2" stroke="#1C2024" stroke-width="2"/>
             <path d="M30 27 H34" stroke="#1D5AA8" stroke-width="3"/>
@@ -1149,6 +1186,7 @@
         </div>
       </div>
     </div>
+    <div class="pagination-controls" id="paginationControls"></div>
     </div>
     <aside class="sort-sidebar">
       <div class="sort-sidebar-label">Sort By</div>
@@ -1207,6 +1245,8 @@
 
 <script>
   const CART_KEY = 'tls_cart';
+  const PAGE_SIZE = 8;
+  let currentPage = 1;
   function updateCartBadge() {
     try {
       const cart = JSON.parse(localStorage.getItem(CART_KEY)) || {};
@@ -1219,6 +1259,7 @@
     }
   }
   updateCartBadge();
+  applyPagination();
 
 
   function secondaryMatch(name, value) {
@@ -1257,8 +1298,65 @@
       if (visible) count++;
     });
 
+    currentPage = 1;
+    applyPagination();
+  }
+
+
+  function applyPagination() {
+    const grid = document.querySelector('.grid');
+    const allCards = Array.from(grid.querySelectorAll('.card'));
+    const passingFilter = allCards.filter(c => c.style.display !== 'none');
+
+    const totalItems = passingFilter.length;
+    const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
+    if (currentPage > totalPages) currentPage = totalPages;
+    if (currentPage < 1) currentPage = 1;
+
+    const start = (currentPage - 1) * PAGE_SIZE;
+    const end = start + PAGE_SIZE;
+
+    passingFilter.forEach((card, i) => {
+      card.style.display = (i >= start && i < end) ? '' : 'none';
+    });
+
     const countEl = document.querySelector('.section-head .count');
-    if (countEl) countEl.textContent = count + ' item' + (count === 1 ? '' : 's') + ' shown';
+    if (countEl) countEl.textContent = totalItems + ' item' + (totalItems === 1 ? '' : 's') + ' total';
+
+    renderPaginationControls(totalPages, totalItems);
+  }
+
+  function goToPage(p) {
+    currentPage = p;
+    applyPagination();
+    document.querySelector('.grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function backToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function renderPaginationControls(totalPages, totalItems) {
+    const container = document.getElementById('paginationControls');
+    if (!container) return;
+
+    if (totalItems === 0) {
+      container.innerHTML = '';
+      return;
+    }
+
+    let pageButtons = '';
+    for (let p = 1; p <= totalPages; p++) {
+      pageButtons += '<button class="page-btn' + (p === currentPage ? ' active' : '') + '" onclick="goToPage(' + p + ')" ' + (p === currentPage ? 'aria-current="page"' : '') + '>' + p + '</button>';
+    }
+
+    container.innerHTML =
+      '<div class="pagination-pages">' +
+        '<button class="page-btn" onclick="goToPage(' + (currentPage - 1) + ')" ' + (currentPage === 1 ? 'disabled' : '') + '>&larr; Prev</button>' +
+        pageButtons +
+        '<button class="page-btn" onclick="goToPage(' + (currentPage + 1) + ')" ' + (currentPage === totalPages ? 'disabled' : '') + '>Next &rarr;</button>' +
+      '</div>' +
+      '<button class="back-to-top-link" onclick="backToTop()">&uarr; Back to Top</button>';
   }
 
   function clearCategoryFilters() {
@@ -1305,6 +1403,8 @@
     }
 
     sorted.forEach(card => grid.appendChild(card));
+    currentPage = 1;
+    applyPagination();
   }
 </script>
 </body>

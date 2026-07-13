@@ -625,6 +625,43 @@
     transition: background 0.15s;
   }
   .apply-price-btn:hover { background: var(--brass-bright); }
+
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .pagination-pages { display: flex; gap: 6px; flex-wrap: wrap; }
+  .page-btn {
+    background: var(--paper);
+    border: 2px solid var(--line);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 14px;
+    cursor: pointer;
+    min-width: 40px;
+    transition: all 0.15s;
+  }
+  .page-btn:hover:not(:disabled) { border-color: var(--brass); color: var(--brass); }
+  .page-btn.active { background: var(--brass); border-color: var(--brass); color: #FFFFFF; }
+  .page-btn:disabled { opacity: 0.4; cursor: default; }
+  .back-to-top-link {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--brass);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .back-to-top-link:hover { color: var(--brass-bright); }
 </style>
 
 <body>
@@ -691,7 +728,7 @@
     <div class="grid">
       <div class="card" id="arrow-fire-rated-rim-exit-device-less-trim" data-price="420.0" data-name="arrow fire-rated rim exit device, less trim" data-brand="arrow">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -713,7 +750,7 @@
       </div>
       <div class="card" id="lsda-non-fire-rated-rim-exit-device-less-trim" data-price="457.13" data-name="lsda non-fire-rated rim exit device, less trim" data-brand="lsda">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -735,7 +772,7 @@
       </div>
       <div class="card" id="dexter-fire-rated-rim-exit-device-with-pull-trim" data-price="494.26" data-name="dexter fire-rated rim exit device, with pull trim" data-brand="dexter">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -757,7 +794,7 @@
       </div>
       <div class="card" id="arrow-non-fire-rated-rim-exit-device-with-pull-trim" data-price="531.39" data-name="arrow non-fire-rated rim exit device, with pull trim" data-brand="arrow">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -779,7 +816,7 @@
       </div>
       <div class="card" id="lsda-fire-rated-rim-exit-device-with-lever-trim" data-price="428.52" data-name="lsda fire-rated rim exit device, with lever trim" data-brand="lsda">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -801,7 +838,7 @@
       </div>
       <div class="card" id="dexter-non-fire-rated-rim-exit-device-with-lever-trim" data-price="465.65" data-name="dexter non-fire-rated rim exit device, with lever trim" data-brand="dexter">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -823,7 +860,7 @@
       </div>
       <div class="card" id="arrow-fire-rated-mortise-exit-device-less-trim" data-price="502.78" data-name="arrow fire-rated mortise exit device, less trim" data-brand="arrow">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -845,7 +882,7 @@
       </div>
       <div class="card" id="lsda-non-fire-rated-mortise-exit-device-less-trim" data-price="539.91" data-name="lsda non-fire-rated mortise exit device, less trim" data-brand="lsda">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -867,7 +904,7 @@
       </div>
       <div class="card" id="dexter-fire-rated-mortise-exit-device-with-pull-trim" data-price="436.04" data-name="dexter fire-rated mortise exit device, with pull trim" data-brand="dexter">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -889,7 +926,7 @@
       </div>
       <div class="card" id="arrow-non-fire-rated-mortise-exit-device-with-pull-trim" data-price="473.17" data-name="arrow non-fire-rated mortise exit device, with pull trim" data-brand="arrow">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -911,7 +948,7 @@
       </div>
       <div class="card" id="lsda-fire-rated-mortise-exit-device-with-lever-trim" data-price="510.3" data-name="lsda fire-rated mortise exit device, with lever trim" data-brand="lsda">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -933,7 +970,7 @@
       </div>
       <div class="card" id="dexter-non-fire-rated-mortise-exit-device-with-lever-trim" data-price="547.43" data-name="dexter non-fire-rated mortise exit device, with lever trim" data-brand="dexter">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -955,7 +992,7 @@
       </div>
       <div class="card" id="arrow-fire-rated-vertical-rod-exit-device-less-trim" data-price="444.56" data-name="arrow fire-rated vertical rod exit device, less trim" data-brand="arrow">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -977,7 +1014,7 @@
       </div>
       <div class="card" id="lsda-non-fire-rated-vertical-rod-exit-device-less-trim" data-price="481.69" data-name="lsda non-fire-rated vertical rod exit device, less trim" data-brand="lsda">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -999,7 +1036,7 @@
       </div>
       <div class="card" id="dexter-fire-rated-vertical-rod-exit-device-with-pull-trim" data-price="518.82" data-name="dexter fire-rated vertical rod exit device, with pull trim" data-brand="dexter">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -1021,7 +1058,7 @@
       </div>
       <div class="card" id="arrow-non-fire-rated-vertical-rod-exit-device-with-pull-trim" data-price="555.95" data-name="arrow non-fire-rated vertical rod exit device, with pull trim" data-brand="arrow">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -1043,7 +1080,7 @@
       </div>
       <div class="card" id="lsda-fire-rated-vertical-rod-exit-device-with-lever-trim" data-price="452.08" data-name="lsda fire-rated vertical rod exit device, with lever trim" data-brand="lsda">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -1065,7 +1102,7 @@
       </div>
       <div class="card" id="dexter-non-fire-rated-vertical-rod-exit-device-with-lever-trim" data-price="489.21" data-name="dexter non-fire-rated vertical rod exit device, with lever trim" data-brand="dexter">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -1087,7 +1124,7 @@
       </div>
       <div class="card" id="arrow-fire-rated-concealed-vertical-rod-less-trim" data-price="526.34" data-name="arrow fire-rated concealed vertical rod, less trim" data-brand="arrow">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -1109,7 +1146,7 @@
       </div>
       <div class="card" id="lsda-non-fire-rated-concealed-vertical-rod-less-trim" data-price="423.47" data-name="lsda non-fire-rated concealed vertical rod, less trim" data-brand="lsda">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="8" width="52" height="48" rx="2" stroke="#1C2024" stroke-width="2"/>
             <rect x="12" y="26" width="40" height="8" rx="2" fill="#1D5AA8"/>
             <path d="M12 44 H40" stroke="#1C2024" stroke-width="2"/>
@@ -1130,6 +1167,7 @@
         </div>
       </div>
     </div>
+    <div class="pagination-controls" id="paginationControls"></div>
     </div>
     <aside class="sort-sidebar">
       <div class="sort-sidebar-label">Sort By</div>
@@ -1188,6 +1226,8 @@
 
 <script>
   const CART_KEY = 'tls_cart';
+  const PAGE_SIZE = 8;
+  let currentPage = 1;
   function updateCartBadge() {
     try {
       const cart = JSON.parse(localStorage.getItem(CART_KEY)) || {};
@@ -1200,6 +1240,7 @@
     }
   }
   updateCartBadge();
+  applyPagination();
 
 
   function secondaryMatch(name, value) {
@@ -1238,8 +1279,65 @@
       if (visible) count++;
     });
 
+    currentPage = 1;
+    applyPagination();
+  }
+
+
+  function applyPagination() {
+    const grid = document.querySelector('.grid');
+    const allCards = Array.from(grid.querySelectorAll('.card'));
+    const passingFilter = allCards.filter(c => c.style.display !== 'none');
+
+    const totalItems = passingFilter.length;
+    const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
+    if (currentPage > totalPages) currentPage = totalPages;
+    if (currentPage < 1) currentPage = 1;
+
+    const start = (currentPage - 1) * PAGE_SIZE;
+    const end = start + PAGE_SIZE;
+
+    passingFilter.forEach((card, i) => {
+      card.style.display = (i >= start && i < end) ? '' : 'none';
+    });
+
     const countEl = document.querySelector('.section-head .count');
-    if (countEl) countEl.textContent = count + ' item' + (count === 1 ? '' : 's') + ' shown';
+    if (countEl) countEl.textContent = totalItems + ' item' + (totalItems === 1 ? '' : 's') + ' total';
+
+    renderPaginationControls(totalPages, totalItems);
+  }
+
+  function goToPage(p) {
+    currentPage = p;
+    applyPagination();
+    document.querySelector('.grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function backToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function renderPaginationControls(totalPages, totalItems) {
+    const container = document.getElementById('paginationControls');
+    if (!container) return;
+
+    if (totalItems === 0) {
+      container.innerHTML = '';
+      return;
+    }
+
+    let pageButtons = '';
+    for (let p = 1; p <= totalPages; p++) {
+      pageButtons += '<button class="page-btn' + (p === currentPage ? ' active' : '') + '" onclick="goToPage(' + p + ')" ' + (p === currentPage ? 'aria-current="page"' : '') + '>' + p + '</button>';
+    }
+
+    container.innerHTML =
+      '<div class="pagination-pages">' +
+        '<button class="page-btn" onclick="goToPage(' + (currentPage - 1) + ')" ' + (currentPage === 1 ? 'disabled' : '') + '>&larr; Prev</button>' +
+        pageButtons +
+        '<button class="page-btn" onclick="goToPage(' + (currentPage + 1) + ')" ' + (currentPage === totalPages ? 'disabled' : '') + '>Next &rarr;</button>' +
+      '</div>' +
+      '<button class="back-to-top-link" onclick="backToTop()">&uarr; Back to Top</button>';
   }
 
   function clearCategoryFilters() {
@@ -1286,6 +1384,8 @@
     }
 
     sorted.forEach(card => grid.appendChild(card));
+    currentPage = 1;
+    applyPagination();
   }
 </script>
 </body>

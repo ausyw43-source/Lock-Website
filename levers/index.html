@@ -625,6 +625,43 @@
     transition: background 0.15s;
   }
   .apply-price-btn:hover { background: var(--brass-bright); }
+
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .pagination-pages { display: flex; gap: 6px; flex-wrap: wrap; }
+  .page-btn {
+    background: var(--paper);
+    border: 2px solid var(--line);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 14px;
+    cursor: pointer;
+    min-width: 40px;
+    transition: all 0.15s;
+  }
+  .page-btn:hover:not(:disabled) { border-color: var(--brass); color: var(--brass); }
+  .page-btn.active { background: var(--brass); border-color: var(--brass); color: #FFFFFF; }
+  .page-btn:disabled { opacity: 0.4; cursor: default; }
+  .back-to-top-link {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--brass);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .back-to-top-link:hover { color: var(--brass-bright); }
 </style>
 
 <body>
@@ -692,7 +729,7 @@
     <div class="grid">
       <div class="card" id="arrow-grade-1-storeroom-lever" data-price="220.0" data-name="arrow grade 1 storeroom lever" data-brand="arrow">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -715,7 +752,7 @@
       </div>
       <div class="card" id="marks-usa-grade-2-storeroom-lever" data-price="257.13" data-name="marks usa grade 2 storeroom lever" data-brand="marks">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -738,7 +775,7 @@
       </div>
       <div class="card" id="dexter-grade-1-entry-lever" data-price="294.26" data-name="dexter grade 1 entry lever" data-brand="dexter">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -761,7 +798,7 @@
       </div>
       <div class="card" id="gms-grade-2-entry-lever" data-price="231.39" data-name="gms grade 2 entry lever" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -784,7 +821,7 @@
       </div>
       <div class="card" id="arrow-grade-1-passage-lever" data-price="268.52" data-name="arrow grade 1 passage lever" data-brand="arrow">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -807,7 +844,7 @@
       </div>
       <div class="card" id="marks-usa-grade-2-passage-lever" data-price="305.65" data-name="marks usa grade 2 passage lever" data-brand="marks">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -830,7 +867,7 @@
       </div>
       <div class="card" id="dexter-grade-1-classroom-lever" data-price="242.78" data-name="dexter grade 1 classroom lever" data-brand="dexter">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -853,7 +890,7 @@
       </div>
       <div class="card" id="gms-grade-2-classroom-lever" data-price="279.91" data-name="gms grade 2 classroom lever" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -876,7 +913,7 @@
       </div>
       <div class="card" id="arrow-grade-1-privacy-lever" data-price="316.04" data-name="arrow grade 1 privacy lever" data-brand="arrow">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -899,7 +936,7 @@
       </div>
       <div class="card" id="marks-usa-grade-2-privacy-lever" data-price="253.17" data-name="marks usa grade 2 privacy lever" data-brand="marks">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -922,7 +959,7 @@
       </div>
       <div class="card" id="dexter-grade-1-communicating-lever" data-price="290.3" data-name="dexter grade 1 communicating lever" data-brand="dexter">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -945,7 +982,7 @@
       </div>
       <div class="card" id="gms-grade-2-communicating-lever" data-price="227.43" data-name="gms grade 2 communicating lever" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -968,7 +1005,7 @@
       </div>
       <div class="card" id="arrow-grade-1-apartment-lever" data-price="264.56" data-name="arrow grade 1 apartment lever" data-brand="arrow">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -991,7 +1028,7 @@
       </div>
       <div class="card" id="marks-usa-grade-2-apartment-lever" data-price="301.69" data-name="marks usa grade 2 apartment lever" data-brand="marks">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -1014,7 +1051,7 @@
       </div>
       <div class="card" id="dexter-grade-1-institution-lever" data-price="238.82" data-name="dexter grade 1 institution lever" data-brand="dexter">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -1037,7 +1074,7 @@
       </div>
       <div class="card" id="gms-grade-2-institution-lever" data-price="275.95" data-name="gms grade 2 institution lever" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -1060,7 +1097,7 @@
       </div>
       <div class="card" id="arrow-grade-1-corridor-lever" data-price="312.08" data-name="arrow grade 1 corridor lever" data-brand="arrow">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -1083,7 +1120,7 @@
       </div>
       <div class="card" id="marks-usa-grade-2-corridor-lever" data-price="249.21" data-name="marks usa grade 2 corridor lever" data-brand="marks">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -1106,7 +1143,7 @@
       </div>
       <div class="card" id="dexter-grade-1-hotel-lever" data-price="286.34" data-name="dexter grade 1 hotel lever" data-brand="dexter">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -1129,7 +1166,7 @@
       </div>
       <div class="card" id="gms-grade-2-hotel-lever" data-price="223.47" data-name="gms grade 2 hotel lever" data-brand="gms">
         <div class="card-icon">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="8" y="6" width="10" height="52" rx="1.5" stroke="#1C2024" stroke-width="2"/>
             <circle cx="13" cy="32" r="3" fill="#1D5AA8"/>
             <path d="M18 32 H44" stroke="#1C2024" stroke-width="2"/>
@@ -1151,6 +1188,7 @@
         </div>
       </div>
     </div>
+    <div class="pagination-controls" id="paginationControls"></div>
     </div>
     <aside class="sort-sidebar">
       <div class="sort-sidebar-label">Sort By</div>
@@ -1209,6 +1247,8 @@
 
 <script>
   const CART_KEY = 'tls_cart';
+  const PAGE_SIZE = 8;
+  let currentPage = 1;
   function updateCartBadge() {
     try {
       const cart = JSON.parse(localStorage.getItem(CART_KEY)) || {};
@@ -1221,6 +1261,7 @@
     }
   }
   updateCartBadge();
+  applyPagination();
 
 
   function secondaryMatch(name, value) {
@@ -1259,8 +1300,65 @@
       if (visible) count++;
     });
 
+    currentPage = 1;
+    applyPagination();
+  }
+
+
+  function applyPagination() {
+    const grid = document.querySelector('.grid');
+    const allCards = Array.from(grid.querySelectorAll('.card'));
+    const passingFilter = allCards.filter(c => c.style.display !== 'none');
+
+    const totalItems = passingFilter.length;
+    const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
+    if (currentPage > totalPages) currentPage = totalPages;
+    if (currentPage < 1) currentPage = 1;
+
+    const start = (currentPage - 1) * PAGE_SIZE;
+    const end = start + PAGE_SIZE;
+
+    passingFilter.forEach((card, i) => {
+      card.style.display = (i >= start && i < end) ? '' : 'none';
+    });
+
     const countEl = document.querySelector('.section-head .count');
-    if (countEl) countEl.textContent = count + ' item' + (count === 1 ? '' : 's') + ' shown';
+    if (countEl) countEl.textContent = totalItems + ' item' + (totalItems === 1 ? '' : 's') + ' total';
+
+    renderPaginationControls(totalPages, totalItems);
+  }
+
+  function goToPage(p) {
+    currentPage = p;
+    applyPagination();
+    document.querySelector('.grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function backToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function renderPaginationControls(totalPages, totalItems) {
+    const container = document.getElementById('paginationControls');
+    if (!container) return;
+
+    if (totalItems === 0) {
+      container.innerHTML = '';
+      return;
+    }
+
+    let pageButtons = '';
+    for (let p = 1; p <= totalPages; p++) {
+      pageButtons += '<button class="page-btn' + (p === currentPage ? ' active' : '') + '" onclick="goToPage(' + p + ')" ' + (p === currentPage ? 'aria-current="page"' : '') + '>' + p + '</button>';
+    }
+
+    container.innerHTML =
+      '<div class="pagination-pages">' +
+        '<button class="page-btn" onclick="goToPage(' + (currentPage - 1) + ')" ' + (currentPage === 1 ? 'disabled' : '') + '>&larr; Prev</button>' +
+        pageButtons +
+        '<button class="page-btn" onclick="goToPage(' + (currentPage + 1) + ')" ' + (currentPage === totalPages ? 'disabled' : '') + '>Next &rarr;</button>' +
+      '</div>' +
+      '<button class="back-to-top-link" onclick="backToTop()">&uarr; Back to Top</button>';
   }
 
   function clearCategoryFilters() {
@@ -1307,6 +1405,8 @@
     }
 
     sorted.forEach(card => grid.appendChild(card));
+    currentPage = 1;
+    applyPagination();
   }
 </script>
 </body>
