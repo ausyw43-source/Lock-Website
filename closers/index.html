@@ -585,6 +585,46 @@
     height: auto;
     display: block;
   }
+
+  .price-range-block {
+    border-top: 1px solid var(--line);
+    margin-top: 14px;
+    padding-top: 14px;
+  }
+  .price-range-inputs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .price-range-inputs input {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    padding: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--ink);
+    outline: none;
+  }
+  .price-range-inputs input:focus { border-color: var(--brass); }
+  .price-range-inputs span { font-family: var(--font-mono); color: var(--steel-light); font-size: 0.8rem; }
+  .apply-price-btn {
+    width: 100%;
+    background: var(--brass);
+    color: #FFFFFF;
+    border: none;
+    padding: 9px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .apply-price-btn:hover { background: var(--brass-bright); }
 </style>
 
 <body>
@@ -633,9 +673,14 @@
     <div class="catalog-wrap-inner">
     <aside class="brand-sidebar">
       <div class="brand-sidebar-label">Filter by Brand</div>
-      <label class="brand-checkbox"><input type="checkbox" value="lsda" onchange="filterCategoryBrands()"> LSDA</label>
-      <label class="brand-checkbox"><input type="checkbox" value="gms" onchange="filterCategoryBrands()"> GMS</label>
-      <label class="brand-checkbox"><input type="checkbox" value="arrow" onchange="filterCategoryBrands()"> Arrow</label>
+      <label class="brand-checkbox"><input type="checkbox" value="lsda" onchange="applyAllFilters()"> LSDA</label>
+      <label class="brand-checkbox"><input type="checkbox" value="gms" onchange="applyAllFilters()"> GMS</label>
+      <label class="brand-checkbox"><input type="checkbox" value="arrow" onchange="applyAllFilters()"> Arrow</label>
+      <div class="brand-sidebar-label" style="margin-top:14px; padding-top:14px; border-top:1px solid var(--line);">Filter by Duty / Feature</div>
+      <label class="brand-checkbox"><input type="checkbox" class="secondary-filter" value="standard" onchange="applyAllFilters()"> Standard Duty</label>
+      <label class="brand-checkbox"><input type="checkbox" class="secondary-filter" value="heavy" onchange="applyAllFilters()"> Heavy Duty</label>
+      <label class="brand-checkbox"><input type="checkbox" class="secondary-filter" value="ada" onchange="applyAllFilters()"> ADA Compliant</label>
+      <label class="brand-checkbox"><input type="checkbox" class="secondary-filter" value="fire" onchange="applyAllFilters()"> Fire-Rated</label>
       <button class="clear-filters-link" onclick="clearCategoryFilters()">Clear filters</button>
     </aside>
     <div class="catalog-main">
@@ -1134,6 +1179,15 @@
       <button class="sort-option" data-sort="price-desc" onclick="sortCards('price-desc')">Price: High to Low</button>
       <button class="sort-option" data-sort="name-asc" onclick="sortCards('name-asc')">Name: A to Z</button>
       <button class="sort-option" data-sort="name-desc" onclick="sortCards('name-desc')">Name: Z to A</button>
+      <div class="price-range-block">
+        <div class="sort-sidebar-label">Price Range</div>
+        <div class="price-range-inputs">
+          <input type="number" id="priceMin" placeholder="Min" min="0">
+          <span>&ndash;</span>
+          <input type="number" id="priceMax" placeholder="Max" min="0">
+        </div>
+        <button class="apply-price-btn" onclick="applyAllFilters()">Apply</button>
+      </div>
     </aside>
     </div>
   </main>
@@ -1187,28 +1241,56 @@
   }
   updateCartBadge();
 
-  function filterCategoryBrands() {
-    const checkboxes = document.querySelectorAll('.brand-sidebar input[type=checkbox]');
-    const checked = Array.from(checkboxes).filter(c => c.checked).map(c => c.value);
-    checkboxes.forEach(c => {
-      c.closest('.brand-checkbox').classList.toggle('checked', c.checked);
-    });
+
+  function secondaryMatch(name, value) {
+    if (value === 'standard') return name.includes('standard duty');
+    if (value === 'heavy') return name.includes('heavy duty');
+    if (value === 'ada') return name.includes('ada compliant');
+    if (value === 'fire') return name.includes('fire-rated');
+    return true;
+  }
+
+  function applyAllFilters() {
+    const allBrandInputs = Array.from(document.querySelectorAll('.brand-sidebar input[type=checkbox]')).filter(c => !c.classList.contains('secondary-filter'));
+    const secondaryInputs = Array.from(document.querySelectorAll('.brand-sidebar input.secondary-filter'));
+
+    const checkedBrands = allBrandInputs.filter(c => c.checked).map(c => c.value);
+    const checkedSecondary = secondaryInputs.filter(c => c.checked).map(c => c.value);
+
+    allBrandInputs.forEach(c => c.closest('.brand-checkbox').classList.toggle('checked', c.checked));
+    secondaryInputs.forEach(c => c.closest('.brand-checkbox').classList.toggle('checked', c.checked));
+
+    const priceMin = parseFloat(document.getElementById('priceMin').value);
+    const priceMax = parseFloat(document.getElementById('priceMax').value);
+
     const cards = document.querySelectorAll('.card');
     let count = 0;
     cards.forEach(card => {
       const brand = card.getAttribute('data-brand');
-      const visible = checked.length === 0 || checked.includes(brand);
+      const name = card.getAttribute('data-name');
+      const price = parseFloat(card.getAttribute('data-price'));
+
+      const brandOk = checkedBrands.length === 0 || checkedBrands.includes(brand);
+      const secondaryOk = checkedSecondary.length === 0 || checkedSecondary.some(v => secondaryMatch(name, v));
+      const minOk = isNaN(priceMin) || price >= priceMin;
+      const maxOk = isNaN(priceMax) || price <= priceMax;
+
+      const visible = brandOk && secondaryOk && minOk && maxOk;
       card.style.display = visible ? '' : 'none';
       if (visible) count++;
     });
+
     const countEl = document.querySelector('.section-head .count');
     if (countEl) countEl.textContent = count + ' item' + (count === 1 ? '' : 's') + ' shown';
   }
 
   function clearCategoryFilters() {
     document.querySelectorAll('.brand-sidebar input[type=checkbox]').forEach(c => c.checked = false);
-    filterCategoryBrands();
+    document.getElementById('priceMin').value = '';
+    document.getElementById('priceMax').value = '';
+    applyAllFilters();
   }
+
 
   function goToSiteSearch() {
     const term = document.getElementById('searchInput').value.trim();
