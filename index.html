@@ -310,6 +310,12 @@
     cursor: pointer;
     transition: background 0.15s;
   }
+  .buy-now-btn:disabled {
+    background: var(--paper-dim);
+    color: var(--steel-light);
+    cursor: default;
+  }
+  .buy-now-btn:disabled:hover { background: var(--paper-dim); }
   .buy-now-btn:hover { background: var(--brass-bright); }
   .section-head {
     display: flex;
@@ -744,7 +750,7 @@
         <h2>Frequently Purchased from Arrow</h2>
         <span class="count">10 items</span>
       </div>
-      <div class="placeholder-banner">Sample pricing shown for mockup purposes — final pricing pending supplier confirmation.</div>
+      <div class="placeholder-banner">Sample pricing shown for mockup purposes — items are not yet available to order, pending supplier confirmation.</div>
       <div class="brand-item-grid">
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -759,7 +765,7 @@
             <li>Storeroom function</li>
           </ul>
           <div class="brand-item-price">$220.00</div>
-          <button class="buy-now-btn" onclick="addToCart('arrow-grade-1-storeroom-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -774,7 +780,7 @@
             <li>Passage function</li>
           </ul>
           <div class="brand-item-price">$268.52</div>
-          <button class="buy-now-btn" onclick="addToCart('arrow-grade-1-passage-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -789,7 +795,7 @@
             <li>Privacy function</li>
           </ul>
           <div class="brand-item-price">$316.04</div>
-          <button class="buy-now-btn" onclick="addToCart('arrow-grade-1-privacy-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -804,7 +810,7 @@
             <li>Apartment function</li>
           </ul>
           <div class="brand-item-price">$264.56</div>
-          <button class="buy-now-btn" onclick="addToCart('arrow-grade-1-apartment-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -819,7 +825,7 @@
             <li>Corridor function</li>
           </ul>
           <div class="brand-item-price">$312.08</div>
-          <button class="buy-now-btn" onclick="addToCart('arrow-grade-1-corridor-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -834,7 +840,7 @@
             <li>Surface Mount</li>
           </ul>
           <div class="brand-item-price">$254.26</div>
-          <button class="buy-now-btn" onclick="addToCart('arrow-ada-compliant-surface-mount-closer')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -849,7 +855,7 @@
             <li>Concealed Overhead</li>
           </ul>
           <div class="brand-item-price">$205.65</div>
-          <button class="buy-now-btn" onclick="addToCart('arrow-heavy-duty-concealed-overhead-closer')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -864,7 +870,7 @@
             <li>Floor Spring</li>
           </ul>
           <div class="brand-item-price">$236.04</div>
-          <button class="buy-now-btn" onclick="addToCart('arrow-standard-duty-floor-spring-closer')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -879,7 +885,7 @@
             <li>Floor Spring</li>
           </ul>
           <div class="brand-item-price">$187.43</div>
-          <button class="buy-now-btn" onclick="addToCart('arrow-fire-rated-floor-spring-closer')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -894,7 +900,7 @@
             <li>Parallel Arm</li>
           </ul>
           <div class="brand-item-price">$218.82</div>
-          <button class="buy-now-btn" onclick="addToCart('arrow-ada-compliant-parallel-arm-closer')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
       </div>
     </section>
@@ -903,7 +909,7 @@
         <h2>Frequently Purchased from Marks USA</h2>
         <span class="count">5 items</span>
       </div>
-      <div class="placeholder-banner">Sample pricing shown for mockup purposes — final pricing pending supplier confirmation.</div>
+      <div class="placeholder-banner">Sample pricing shown for mockup purposes — items are not yet available to order, pending supplier confirmation.</div>
       <div class="brand-item-grid">
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -918,7 +924,7 @@
             <li>Storeroom function</li>
           </ul>
           <div class="brand-item-price">$257.13</div>
-          <button class="buy-now-btn" onclick="addToCart('marks-usa-grade-2-storeroom-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -933,7 +939,7 @@
             <li>Passage function</li>
           </ul>
           <div class="brand-item-price">$305.65</div>
-          <button class="buy-now-btn" onclick="addToCart('marks-usa-grade-2-passage-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -948,7 +954,7 @@
             <li>Privacy function</li>
           </ul>
           <div class="brand-item-price">$253.17</div>
-          <button class="buy-now-btn" onclick="addToCart('marks-usa-grade-2-privacy-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -963,7 +969,7 @@
             <li>Apartment function</li>
           </ul>
           <div class="brand-item-price">$301.69</div>
-          <button class="buy-now-btn" onclick="addToCart('marks-usa-grade-2-apartment-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -978,7 +984,7 @@
             <li>Corridor function</li>
           </ul>
           <div class="brand-item-price">$249.21</div>
-          <button class="buy-now-btn" onclick="addToCart('marks-usa-grade-2-corridor-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
       </div>
     </section>
@@ -987,7 +993,7 @@
         <h2>Frequently Purchased from HES</h2>
         <span class="count">10 items</span>
       </div>
-      <div class="placeholder-banner">Sample pricing shown for mockup purposes — final pricing pending supplier confirmation.</div>
+      <div class="placeholder-banner">Sample pricing shown for mockup purposes — items are not yet available to order, pending supplier confirmation.</div>
       <div class="brand-item-grid">
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1002,7 +1008,7 @@
             <li>Door position monitoring included</li>
           </ul>
           <div class="brand-item-price">$120.00</div>
-          <button class="buy-now-btn" onclick="addToCart('hes-600-lb-single-door-surface-mount-mag-lock-with-monitoring')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1017,7 +1023,7 @@
             <li>Door position monitoring included</li>
           </ul>
           <div class="brand-item-price">$124.26</div>
-          <button class="buy-now-btn" onclick="addToCart('hes-1200-lb-single-door-surface-mount-mag-lock-with-monitoring')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1032,7 +1038,7 @@
             <li>Door position monitoring included</li>
           </ul>
           <div class="brand-item-price">$128.52</div>
-          <button class="buy-now-btn" onclick="addToCart('hes-600-lb-double-door-surface-mount-mag-lock-with-monitoring')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1047,7 +1053,7 @@
             <li>Door position monitoring included</li>
           </ul>
           <div class="brand-item-price">$132.78</div>
-          <button class="buy-now-btn" onclick="addToCart('hes-1200-lb-double-door-surface-mount-mag-lock-with-monitoring')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1062,7 +1068,7 @@
             <li>Door position monitoring included</li>
           </ul>
           <div class="brand-item-price">$136.04</div>
-          <button class="buy-now-btn" onclick="addToCart('hes-600-lb-gate-mount-mag-lock-with-monitoring')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1077,7 +1083,7 @@
             <li>Door position monitoring included</li>
           </ul>
           <div class="brand-item-price">$140.30</div>
-          <button class="buy-now-btn" onclick="addToCart('hes-1200-lb-gate-mount-mag-lock-with-monitoring')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1092,7 +1098,7 @@
             <li>Door position monitoring included</li>
           </ul>
           <div class="brand-item-price">$144.56</div>
-          <button class="buy-now-btn" onclick="addToCart('hes-600-lb-recessed-mount-mag-lock-with-monitoring')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1107,7 +1113,7 @@
             <li>Door position monitoring included</li>
           </ul>
           <div class="brand-item-price">$148.82</div>
-          <button class="buy-now-btn" onclick="addToCart('hes-1200-lb-recessed-mount-mag-lock-with-monitoring')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1122,7 +1128,7 @@
             <li>Door position monitoring included</li>
           </ul>
           <div class="brand-item-price">$152.08</div>
-          <button class="buy-now-btn" onclick="addToCart('hes-600-lb-mini-mag-mag-lock-with-monitoring')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1137,7 +1143,7 @@
             <li>Door position monitoring included</li>
           </ul>
           <div class="brand-item-price">$156.34</div>
-          <button class="buy-now-btn" onclick="addToCart('hes-1200-lb-mini-mag-mag-lock-with-monitoring')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
       </div>
     </section>
@@ -1146,7 +1152,7 @@
         <h2>Frequently Purchased from Dexter</h2>
         <span class="count">10 items</span>
       </div>
-      <div class="placeholder-banner">Sample pricing shown for mockup purposes — final pricing pending supplier confirmation.</div>
+      <div class="placeholder-banner">Sample pricing shown for mockup purposes — items are not yet available to order, pending supplier confirmation.</div>
       <div class="brand-item-grid">
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1161,7 +1167,7 @@
             <li>Entry function</li>
           </ul>
           <div class="brand-item-price">$294.26</div>
-          <button class="buy-now-btn" onclick="addToCart('dexter-grade-1-entry-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1176,7 +1182,7 @@
             <li>Classroom function</li>
           </ul>
           <div class="brand-item-price">$242.78</div>
-          <button class="buy-now-btn" onclick="addToCart('dexter-grade-1-classroom-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1191,7 +1197,7 @@
             <li>Communicating function</li>
           </ul>
           <div class="brand-item-price">$290.30</div>
-          <button class="buy-now-btn" onclick="addToCart('dexter-grade-1-communicating-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1206,7 +1212,7 @@
             <li>Institution function</li>
           </ul>
           <div class="brand-item-price">$238.82</div>
-          <button class="buy-now-btn" onclick="addToCart('dexter-grade-1-institution-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1221,7 +1227,7 @@
             <li>Hotel function</li>
           </ul>
           <div class="brand-item-price">$286.34</div>
-          <button class="buy-now-btn" onclick="addToCart('dexter-grade-1-hotel-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1235,7 +1241,7 @@
             <li>With Pull Trim</li>
           </ul>
           <div class="brand-item-price">$494.26</div>
-          <button class="buy-now-btn" onclick="addToCart('dexter-fire-rated-rim-exit-device-with-pull-trim')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1249,7 +1255,7 @@
             <li>With Lever Trim</li>
           </ul>
           <div class="brand-item-price">$465.65</div>
-          <button class="buy-now-btn" onclick="addToCart('dexter-non-fire-rated-rim-exit-device-with-lever-trim')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1263,7 +1269,7 @@
             <li>With Pull Trim</li>
           </ul>
           <div class="brand-item-price">$436.04</div>
-          <button class="buy-now-btn" onclick="addToCart('dexter-fire-rated-mortise-exit-device-with-pull-trim')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1277,7 +1283,7 @@
             <li>With Lever Trim</li>
           </ul>
           <div class="brand-item-price">$547.43</div>
-          <button class="buy-now-btn" onclick="addToCart('dexter-non-fire-rated-mortise-exit-device-with-lever-trim')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1291,7 +1297,7 @@
             <li>With Pull Trim</li>
           </ul>
           <div class="brand-item-price">$518.82</div>
-          <button class="buy-now-btn" onclick="addToCart('dexter-fire-rated-vertical-rod-exit-device-with-pull-trim')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
       </div>
     </section>
@@ -1300,7 +1306,7 @@
         <h2>Frequently Purchased from GMS</h2>
         <span class="count">10 items</span>
       </div>
-      <div class="placeholder-banner">Sample pricing shown for mockup purposes — final pricing pending supplier confirmation.</div>
+      <div class="placeholder-banner">Sample pricing shown for mockup purposes — items are not yet available to order, pending supplier confirmation.</div>
       <div class="brand-item-grid">
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1315,7 +1321,7 @@
             <li>Entry function</li>
           </ul>
           <div class="brand-item-price">$231.39</div>
-          <button class="buy-now-btn" onclick="addToCart('gms-grade-2-entry-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1330,7 +1336,7 @@
             <li>Classroom function</li>
           </ul>
           <div class="brand-item-price">$279.91</div>
-          <button class="buy-now-btn" onclick="addToCart('gms-grade-2-classroom-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1345,7 +1351,7 @@
             <li>Communicating function</li>
           </ul>
           <div class="brand-item-price">$227.43</div>
-          <button class="buy-now-btn" onclick="addToCart('gms-grade-2-communicating-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1360,7 +1366,7 @@
             <li>Institution function</li>
           </ul>
           <div class="brand-item-price">$275.95</div>
-          <button class="buy-now-btn" onclick="addToCart('gms-grade-2-institution-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1375,7 +1381,7 @@
             <li>Hotel function</li>
           </ul>
           <div class="brand-item-price">$223.47</div>
-          <button class="buy-now-btn" onclick="addToCart('gms-grade-2-hotel-lever')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1390,7 +1396,7 @@
             <li>Surface Mount</li>
           </ul>
           <div class="brand-item-price">$217.13</div>
-          <button class="buy-now-btn" onclick="addToCart('gms-heavy-duty-surface-mount-closer')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1405,7 +1411,7 @@
             <li>Concealed Overhead</li>
           </ul>
           <div class="brand-item-price">$248.52</div>
-          <button class="buy-now-btn" onclick="addToCart('gms-standard-duty-concealed-overhead-closer')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1420,7 +1426,7 @@
             <li>Concealed Overhead</li>
           </ul>
           <div class="brand-item-price">$199.91</div>
-          <button class="buy-now-btn" onclick="addToCart('gms-fire-rated-concealed-overhead-closer')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1435,7 +1441,7 @@
             <li>Floor Spring</li>
           </ul>
           <div class="brand-item-price">$230.30</div>
-          <button class="buy-now-btn" onclick="addToCart('gms-ada-compliant-floor-spring-closer')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1450,7 +1456,7 @@
             <li>Parallel Arm</li>
           </ul>
           <div class="brand-item-price">$181.69</div>
-          <button class="buy-now-btn" onclick="addToCart('gms-heavy-duty-parallel-arm-closer')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
       </div>
     </section>
@@ -1459,7 +1465,7 @@
         <h2>Frequently Purchased from LSDA</h2>
         <span class="count">10 items</span>
       </div>
-      <div class="placeholder-banner">Sample pricing shown for mockup purposes — final pricing pending supplier confirmation.</div>
+      <div class="placeholder-banner">Sample pricing shown for mockup purposes — items are not yet available to order, pending supplier confirmation.</div>
       <div class="brand-item-grid">
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1474,7 +1480,7 @@
             <li>Surface Mount</li>
           </ul>
           <div class="brand-item-price">$180.00</div>
-          <button class="buy-now-btn" onclick="addToCart('lsda-standard-duty-surface-mount-closer')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1489,7 +1495,7 @@
             <li>Surface Mount</li>
           </ul>
           <div class="brand-item-price">$211.39</div>
-          <button class="buy-now-btn" onclick="addToCart('lsda-fire-rated-surface-mount-closer')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1504,7 +1510,7 @@
             <li>Concealed Overhead</li>
           </ul>
           <div class="brand-item-price">$242.78</div>
-          <button class="buy-now-btn" onclick="addToCart('lsda-ada-compliant-concealed-overhead-closer')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1519,7 +1525,7 @@
             <li>Floor Spring</li>
           </ul>
           <div class="brand-item-price">$193.17</div>
-          <button class="buy-now-btn" onclick="addToCart('lsda-heavy-duty-floor-spring-closer')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1534,7 +1540,7 @@
             <li>Parallel Arm</li>
           </ul>
           <div class="brand-item-price">$224.56</div>
-          <button class="buy-now-btn" onclick="addToCart('lsda-standard-duty-parallel-arm-closer')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1549,7 +1555,7 @@
             <li>Parallel Arm</li>
           </ul>
           <div class="brand-item-price">$255.95</div>
-          <button class="buy-now-btn" onclick="addToCart('lsda-fire-rated-parallel-arm-closer')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1564,7 +1570,7 @@
             <li>Top Jamb</li>
           </ul>
           <div class="brand-item-price">$206.34</div>
-          <button class="buy-now-btn" onclick="addToCart('lsda-ada-compliant-top-jamb-closer')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1578,7 +1584,7 @@
             <li>Less Trim</li>
           </ul>
           <div class="brand-item-price">$457.13</div>
-          <button class="buy-now-btn" onclick="addToCart('lsda-non-fire-rated-rim-exit-device-less-trim')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1592,7 +1598,7 @@
             <li>With Lever Trim</li>
           </ul>
           <div class="brand-item-price">$428.52</div>
-          <button class="buy-now-btn" onclick="addToCart('lsda-fire-rated-rim-exit-device-with-lever-trim')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
         <div class="brand-item-card">
           <div class="brand-item-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1606,7 +1612,7 @@
             <li>Less Trim</li>
           </ul>
           <div class="brand-item-price">$539.91</div>
-          <button class="buy-now-btn" onclick="addToCart('lsda-non-fire-rated-mortise-exit-device-less-trim')"><span>Add to Cart</span></button>
+          <button class="buy-now-btn" disabled><span>Coming Soon</span></button>
         </div>
       </div>
     </section>
